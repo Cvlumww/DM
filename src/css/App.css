@@ -1,1 +1,10 @@
-/* No CSS *//*# sourceMappingURL=App.css.map */
+.Header {
+  position: absolute;
+  top: 0;
+}
+
+.Footer {
+  position: absolute;
+  bottom: 0;
+}
+/*# sourceMappingURL=App.css.map */

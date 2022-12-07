@@ -1,7 +1,12 @@
 import React from "react";
 
 const Character = () => {
-  return <></>;
+  return (
+    <div className="CharContainer">
+      <div className="item"></div>
+      <div className="item"></div>
+    </div>
+  );
 };
 
 export default Character;
