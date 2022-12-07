@@ -1,10 +1,9 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 
 const Header = () => {
   return (
-    <div className="Header Container">
-      <div className="Row">
+    <div className="Header ">
+      <div className="">
         <p>IMAGE HERE</p>
 
         <div className="buttons">
