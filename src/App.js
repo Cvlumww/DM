@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import "./css/App.css";
 import Character from "./components/Character";
 import Header from "./components/Header";

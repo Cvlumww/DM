@@ -1,20 +1,56 @@
 // Fonts & Variables
 
+$dark: #071103;
+$light: #f7b064;
+$accent: #ef2d56;
+// Overall
+
+body {
+  background-color: $dark;
+  color: $light;
+  padding: 0;
+  margin: 0;
+
+  overflow-x: hidden;
+}
+
 // Header
 
 .Header {
-  position: absolute;
-  top: 0;
+  font-size: 20px;
+
+  padding: 50px;
+
+  width: 100vw;
+
+  p {
+    width: 30%;
+  }
 }
 
 .buttons {
+  float: right;
+
+  padding-right: 75px;
+  button {
+    background-color: $accent;
+
+    font-size: 20px;
+  }
 }
 // Input Popup
 .InputPop {
 }
 // Character Sliders
 .CharContainer {
+  border: 1px solid $light;
   .item {
+    padding: 25px;
+    border-bottom: 1px solid $accent;
+  }
+
+  .item:nth-last-child(1) {
+    border-bottom: none;
   }
 }
 
@@ -22,4 +58,10 @@
 .Footer {
   position: absolute;
   bottom: 0;
+
+  font-size: 20px;
+
+  padding: 50px;
+
+  width: 100vw;
 }

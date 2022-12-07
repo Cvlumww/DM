@@ -1,10 +1,49 @@
+body {
+  background-color: #071103;
+  color: #f7b064;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
 .Header {
-  position: absolute;
-  top: 0;
+  font-size: 20px;
+  padding: 50px;
+  width: 100vw;
+}
+
+.Header p {
+  width: 30%;
+}
+
+.buttons {
+  float: right;
+  padding-right: 75px;
+}
+
+.buttons button {
+  background-color: #ef2d56;
+  font-size: 20px;
+}
+
+.CharContainer {
+  border: 1px solid #f7b064;
+}
+
+.CharContainer .item {
+  padding: 25px;
+  border-bottom: 1px solid #ef2d56;
+}
+
+.CharContainer .item:nth-last-child(1) {
+  border-bottom: none;
 }
 
 .Footer {
   position: absolute;
   bottom: 0;
+  font-size: 20px;
+  padding: 50px;
+  width: 100vw;
 }
 /*# sourceMappingURL=App.css.map */
