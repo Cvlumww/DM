@@ -1,15 +1,30 @@
-import React from "react";
+import { useState } from "react";
+import Inputs from "./Inputs";
 
-const Header = () => {
+const Header = ({ inits, SetInits, Clear }) => {
+  const [popUp, SetPopUp] = useState(false);
+
+  const togglePopUp = () => {
+    SetPopUp(!popUp);
+  };
+
   return (
-    <div className="Header ">
+    <div className="Header">
       <div className="">
         <p>IMAGE HERE</p>
 
         <div className="buttons">
-          <button className="Add-PC">Add Player Character Here</button>
-          <button className="Add-NPC">Add NPC Here</button>
+          <button className="Add-PC" onClick={togglePopUp}>
+            Add Character Here
+          </button>
+          <button className="Add-NPC" onClick={Clear}>
+            Clear Table
+          </button>
         </div>
+
+        {popUp && (
+          <Inputs toggle={togglePopUp} inits={inits} SetInits={SetInits} />
+        )}
       </div>
     </div>
   );

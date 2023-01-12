@@ -1,15 +1,33 @@
-import React from "react";
+import { useRef } from "react";
+import Item from "./Item";
 
-const Character = () => {
+const Character = ({ inits, SetInits }) => {
+  const handleDragStart = (e) => {};
+
   return (
-    <div className="CharContainer">
-      <div className="item">Name 1 | Initiative Order | HP</div>
-      <div className="item">Name 2 | Initiative Order | HP</div>
-      <div className="item">Name 3 | Initiative Order | HP</div>
-      <div className="item">Name 4 | Initiative Order | HP</div>
-      <div className="item">Name 5 | Initiative Order | HP</div>
-      <div className="item">Name 6 | Initiative Order | HP</div>
-    </div>
+    <>
+      {/* {inits?.length > 0 ? (<div className="CharContainer">
+        
+          {inits.map((init) => {
+          return <Item data={init} key={init.id} click={handleDragStart} />;
+        })}
+        ) : <div className="empty">
+          <h3></h3>
+          </div>
+      </div>)} */}
+
+      {inits?.length > 0 ? (
+        <div className="CharContainer">
+          {inits.map((init) => {
+            return <Item data={init} key={init.id} />;
+          })}
+        </div>
+      ) : (
+        <div className="empty">
+          <h3>Nothing to show yet, try adding some Characters</h3>
+        </div>
+      )}
+    </>
   );
 };
 
