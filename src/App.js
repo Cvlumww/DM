@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./css/App.css";
 import Character from "./components/Character";
@@ -8,21 +8,34 @@ import Footer from "./components/Footer";
 function App() {
   const [inits, SetInits] = useState([
     {
-      // id: Math.floor(Math.random() * 1000000),
-      // charName: "",
-      // initiative: "",
-      // HP: "",
-      // version: "",
+      id: "",
+      charName: "",
+      initiative: "",
+      hp: "",
+      version: false,
     },
   ]);
+
+  useEffect(() => {
+    SetInits();
+  }, []);
 
   const Clear = () => {
     SetInits([]);
   };
 
+  const Sort = (inits) => {
+    console.log(inits);
+
+    const initDescending = [...inits].sort(
+      (a, b) => b.initiative - a.initiative
+    );
+    console.log(initDescending);
+  };
+
   return (
     <div className="App">
-      <Header inits={inits} SetInits={SetInits} Clear={Clear} />
+      <Header inits={inits} SetInits={SetInits} Clear={Clear} Sort={Sort} />
       <Character inits={inits} SetInits={SetInits} />
       <Footer />
     </div>

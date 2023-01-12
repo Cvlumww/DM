@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Inputs from "./Inputs";
 
-const Header = ({ inits, SetInits, Clear }) => {
+const Header = ({ inits, SetInits, Clear, Sort }) => {
   const [popUp, SetPopUp] = useState(false);
 
   const togglePopUp = () => {
@@ -11,15 +11,12 @@ const Header = ({ inits, SetInits, Clear }) => {
   return (
     <div className="Header">
       <div className="">
-        <p>IMAGE HERE</p>
+        <h1>DnD Combat Initiative List Sorter</h1>
 
         <div className="buttons">
-          <button className="Add-PC" onClick={togglePopUp}>
-            Add Character Here
-          </button>
-          <button className="Add-NPC" onClick={Clear}>
-            Clear Table
-          </button>
+          <button onClick={togglePopUp}>Add Character Here</button>
+          <button onClick={Clear}>Clear Table</button>
+          <button onClick={Sort}>Sort by Initiative order</button>
         </div>
 
         {popUp && (

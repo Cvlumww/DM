@@ -10,10 +10,10 @@ const Inputs = ({ toggle, inits, SetInits }) => {
       charName: e.target.charName.value,
       initiative: e.target.initiative.value,
       HP: e.target.HP.value,
-      version: e.target.version.value,
     };
 
-    SetInits([AddCharacter, ...inits]);
+    SetInits([...inits, AddCharacter]);
+    console.log(AddCharacter);
   };
 
   return (
@@ -27,13 +27,8 @@ const Inputs = ({ toggle, inits, SetInits }) => {
           }}
         >
           <input type="text" placeholder="Name" name="charName" />
-          <input type="text" placeholder="Initiative" name="initiative" />
+          <input type="number" placeholder="Initiative" name="initiative" />
           <input type="text" placeholder="HP" name="HP" />
-          <select name="version" id="">
-            <option value="">Please select one of the options below</option>
-            <option value="Player Character">Player Character</option>
-            <option value="Non Player Character">Non Player Character</option>
-          </select>
           <button>Submit</button>
         </form>
       </div>

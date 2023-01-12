@@ -1,15 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
 body {
   background-color: #071103;
   color: #f7b064;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  font-family: "Hind", sans-serif;
 }
 
 .Header {
   font-size: 20px;
   padding: 50px;
   width: 100vw;
+}
+
+.Header h1 {
+  font-family: "Handlee", cursive;
 }
 
 .Header p {
@@ -24,6 +31,7 @@ body {
 .buttons button {
   background-color: #ef2d56;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .Pop-Up {
@@ -52,6 +60,14 @@ body {
   float: right;
   font-size: 20px;
   margin: 10px auto 0;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.Pop-Up .inputBox button:hover {
+  background-color: #ef2d56;
+  color: #071103;
 }
 
 .Pop-Up .inputBox input {
@@ -83,11 +99,18 @@ body {
   border-bottom: none;
 }
 
+.empty {
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 450px;
+}
+
 .Footer {
   position: absolute;
   bottom: 0;
+  font-family: "Handlee", cursive;
   font-size: 20px;
-  padding: 50px;
+  padding: 25px 50px;
   width: 100vw;
 }
 /*# sourceMappingURL=App.css.map */
