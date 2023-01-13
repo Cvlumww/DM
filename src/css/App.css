@@ -95,6 +95,11 @@ body {
   background-color: #1c450c;
 }
 
+.CharContainer .item span {
+  color: red;
+  cursor: pointer;
+}
+
 .CharContainer .item:nth-last-child(1) {
   border-bottom: none;
 }

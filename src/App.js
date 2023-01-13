@@ -6,22 +6,16 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
-  const [inits, SetInits] = useState([
-    {
-      id: "",
-      charName: "",
-      initiative: "",
-      hp: "",
-      version: false,
-    },
-  ]);
+  const [test, SetTest] = useState(false);
 
-  useEffect(() => {
-    SetInits();
-  }, []);
+  const [inits, SetInits] = useState([]);
 
   const Clear = () => {
     SetInits([]);
+  };
+
+  const DeleteChar = (charName) => {
+    // console.log("Delete", charName);
   };
 
   const Sort = (inits) => {
@@ -36,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Header inits={inits} SetInits={SetInits} Clear={Clear} Sort={Sort} />
-      <Character inits={inits} SetInits={SetInits} />
+      <Character inits={inits} SetInits={SetInits} DeleteChar={DeleteChar} />
       <Footer />
     </div>
   );

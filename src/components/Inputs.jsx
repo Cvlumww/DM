@@ -2,7 +2,7 @@ import React from "react";
 
 const Inputs = ({ toggle, inits, SetInits }) => {
   const formSubmit = async (e) => {
-    e.persist();
+    // e.persist();
     e.preventDefault();
 
     const AddCharacter = {

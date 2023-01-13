@@ -109,6 +109,11 @@ body {
     border-bottom: 1px solid $accent;
 
     background-color: #1c450c;
+
+    span {
+      color: red;
+      cursor: pointer;
+    }
   }
 
   .item:nth-last-child(1) {
