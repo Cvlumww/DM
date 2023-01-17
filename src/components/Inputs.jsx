@@ -2,18 +2,20 @@ import React from "react";
 
 const Inputs = ({ toggle, inits, SetInits }) => {
   const formSubmit = async (e) => {
-    // e.persist();
     e.preventDefault();
 
     const AddCharacter = {
       id: Math.floor(Math.random() * 1000000),
       charName: e.target.charName.value,
-      initiative: e.target.initiative.value,
-      HP: e.target.HP.value,
+      initiative: parseInt(e.target.initiative.value),
+      HP: parseInt(e.target.HP.value),
     };
 
     SetInits([...inits, AddCharacter]);
-    console.log(AddCharacter);
+
+    e.target.charName.value = "";
+    e.target.initiative.value = null;
+    e.target.HP.value = null;
   };
 
   return (
@@ -28,7 +30,8 @@ const Inputs = ({ toggle, inits, SetInits }) => {
         >
           <input type="text" placeholder="Name" name="charName" />
           <input type="number" placeholder="Initiative" name="initiative" />
-          <input type="text" placeholder="HP" name="HP" />
+          <input type="number" placeholder="HP" name="HP" />
+
           <button>Submit</button>
         </form>
       </div>

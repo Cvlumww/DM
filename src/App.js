@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
-  const [test, SetTest] = useState(false);
+  const [pcs, SetPcs] = useState(false);
 
   const [inits, SetInits] = useState([]);
 
@@ -14,17 +14,18 @@ function App() {
     SetInits([]);
   };
 
-  const DeleteChar = (charName) => {
+  const DeleteChar = (id) => {
     // console.log("Delete", charName);
+
+    SetInits(inits.filter((init) => init.id !== id));
   };
 
-  const Sort = (inits) => {
-    console.log(inits);
+  const Sort = () => {
+    const initsSorted = [...inits];
 
-    const initDescending = [...inits].sort(
-      (a, b) => b.initiative - a.initiative
-    );
-    console.log(initDescending);
+    initsSorted.sort((a, b) => (a.initiative > b.initiative ? -1 : 1));
+
+    SetInits(initsSorted);
   };
 
   return (

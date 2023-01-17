@@ -8,7 +8,14 @@ const Item = ({ data, DeleteChar }) => {
         <p>
           Name: {data.charName} | Initiative Order: {data.initiative} | HP:{" "}
           {data.HP} |{""}
-          <span onClick={DeleteChar}> X </span>
+          <span
+            onClick={() => {
+              DeleteChar(data.id);
+            }}
+          >
+            {" "}
+            Delete{" "}
+          </span>
         </p>
       </div>
     </>
