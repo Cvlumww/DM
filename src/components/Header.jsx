@@ -15,8 +15,12 @@ const Header = ({ inits, SetInits, Clear, Sort }) => {
 
         <div className="buttons">
           <button onClick={togglePopUp}>Add Character Here</button>
-          <button onClick={Clear}>Clear Table</button>
+
           <button onClick={Sort}>Sort by Initiative order</button>
+        </div>
+
+        <div className="buttons">
+          <button onClick={Clear}>Clear Table</button>
         </div>
 
         {popUp && (

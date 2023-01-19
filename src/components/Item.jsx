@@ -5,7 +5,7 @@ const Item = ({ data, DeleteChar }) => {
   return (
     <>
       <div className="item">
-        <p>
+        <h4>
           Name: {data.charName} | Initiative Order: {data.initiative} | HP:{" "}
           {data.HP} |{""}
           <span
@@ -16,7 +16,7 @@ const Item = ({ data, DeleteChar }) => {
             {" "}
             Delete{" "}
           </span>
-        </p>
+        </h4>
       </div>
     </>
   );

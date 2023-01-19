@@ -28,11 +28,17 @@ const Inputs = ({ toggle, inits, SetInits }) => {
             formSubmit(e);
           }}
         >
-          <input type="text" placeholder="Name" name="charName" />
-          <input type="number" placeholder="Initiative" name="initiative" />
-          <input type="number" placeholder="HP" name="HP" />
-
-          <button>Submit</button>
+          <input type="text" placeholder="Name" name="charName" required />
+          <input
+            type="number"
+            placeholder="Initiative"
+            name="initiative"
+            required
+          />
+          <input type="number" placeholder="HP" name="HP" required />
+          <br />
+          <label htmlFor="NPC">Non Player Character</label>
+          <input type="checkbox" name="NPC" /> <button>Submit</button>
         </form>
       </div>
     </div>

@@ -4,14 +4,38 @@
 
 $bodyFont: "Hind", sans-serif;
 $headingFont: "Handlee", cursive;
-$dark: #071103;
-$light: #f7b064;
-$accent: #ef2d56;
+// $dark: #071103;
+// $light: #f7b064;
+// $accent: #ef2d56;
+
+// Test1
+// $dark: #101211;
+// $light: #bcdbcc;
+// $accent: #456c59;
+
+// Test2
+// $dark: #0f1410;
+// $light: #98b7a8;
+// $accent: #456c59;
+
+// Test3
+// $dark: #262721;
+// $light: #a3b399;
+// $accent: #374c2d;
+
+// Test4
+$dark: #253729;
+$light: #8f9998;
+$accent: #1e543d;
 
 // Overall
 body {
-  background-color: $dark;
-  color: $light;
+  background-color: $light;
+  color: $dark;
+
+  // background-color: $dark;
+  // color: $light;
+
   padding: 0;
   margin: 0;
 
@@ -43,6 +67,7 @@ body {
   padding-right: 75px;
   button {
     background-color: $accent;
+    color: $light;
 
     font-size: 20px;
     cursor: pointer;
@@ -63,7 +88,7 @@ body {
     padding: 25px;
     background-color: antiquewhite;
     width: 500px;
-    height: 230px;
+    height: 270px;
 
     position: absolute;
     top: 50%;
@@ -76,12 +101,13 @@ body {
       font-size: 20px;
       margin: 10px auto 0;
       cursor: pointer;
-      transition-duration: 0.5s;
+      transition-duration: 0.3s;
     }
 
     button:hover {
       background-color: $accent;
-      color: $dark;
+      color: $light;
+      transition-duration: 0.3s;
     }
 
     input {
@@ -101,14 +127,14 @@ body {
 .CharContainer {
   border: 1px solid $light;
   margin-left: 50px;
-  width: 450px;
+  width: 600px;
   overflow-y: hidden;
 
   .item {
     padding: 25px;
-    border-bottom: 1px solid $accent;
-
-    background-color: #1c450c;
+    border-bottom: 1px solid $light;
+    color: $light;
+    background-color: $accent;
 
     span {
       color: red;
