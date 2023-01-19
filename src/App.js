@@ -15,8 +15,6 @@ function App() {
   };
 
   const DeleteChar = (id) => {
-    // console.log("Delete", charName);
-
     SetInits(inits.filter((init) => init.id !== id));
   };
 

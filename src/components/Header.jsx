@@ -18,8 +18,9 @@ const Header = ({ inits, SetInits, Clear, Sort }) => {
 
           <button onClick={Sort}>Sort by Initiative order</button>
         </div>
-
-        <div className="buttons">
+        <br />
+        <br />
+        <div className="nav2">
           <button onClick={Clear}>Clear Table</button>
         </div>
 

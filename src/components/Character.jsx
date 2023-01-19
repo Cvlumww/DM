@@ -6,7 +6,14 @@ const Character = ({ inits, SetInits, DeleteChar }) => {
       {inits?.length > 0 ? (
         <div className="CharContainer">
           {inits.map((init) => {
-            return <Item data={init} key={init.id} DeleteChar={DeleteChar} />;
+            return (
+              <Item
+                data={init}
+                key={init.id}
+                DeleteChar={DeleteChar}
+                SetInits={SetInits}
+              />
+            );
           })}
         </div>
       ) : (

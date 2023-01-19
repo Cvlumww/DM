@@ -9,6 +9,7 @@ const Inputs = ({ toggle, inits, SetInits }) => {
       charName: e.target.charName.value,
       initiative: parseInt(e.target.initiative.value),
       HP: parseInt(e.target.HP.value),
+      NPC: parseInt(e.target.NPC.value),
     };
 
     SetInits([...inits, AddCharacter]);
@@ -16,6 +17,7 @@ const Inputs = ({ toggle, inits, SetInits }) => {
     e.target.charName.value = "";
     e.target.initiative.value = null;
     e.target.HP.value = null;
+    e.target.NPC.value = 0;
   };
 
   return (
@@ -36,9 +38,12 @@ const Inputs = ({ toggle, inits, SetInits }) => {
             required
           />
           <input type="number" placeholder="HP" name="HP" required />
-          <br />
-          <label htmlFor="NPC">Non Player Character</label>
-          <input type="checkbox" name="NPC" /> <button>Submit</button>
+
+          <div className="NPC">
+            <p>Non-Player Character:</p> No{" "}
+            <input type="range" name="NPC" max="1" id="NPCRange" /> Yes
+          </div>
+          <input type="submit" value="Add Character" />
         </form>
       </div>
     </div>
