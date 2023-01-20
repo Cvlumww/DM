@@ -1,18 +1,27 @@
 import HP from "./HpEditor";
 
 // Start
-const Item = ({ data, DeleteChar, SetInits }) => {
+const Item = ({ initiative, DeleteChar, SetInits, inits, UpdateHP }) => {
   return (
     <>
       <div className="item">
         <h4>
-          Name: {data.charName} | Initiative Order: {data.initiative} | HP:{" "}
-          {data.HP} |{""}
-          {data.NPC === 1 ? <HP data={data} SetInits={SetInits} /> : <p></p>}
+          Name: {initiative.charName} | Initiative Order:{" "}
+          {initiative.initiative} | HP: {initiative.HP} |{""}
+          {initiative.NPC === 1 ? (
+            <HP
+              initiative={initiative}
+              SetInits={SetInits}
+              inits={inits}
+              UpdateHP={UpdateHP}
+            />
+          ) : (
+            <p></p>
+          )}
           {/* Delete */}
           <span
             onClick={() => {
-              DeleteChar(data.id);
+              DeleteChar(initiative.id);
             }}
           >
             {" "}

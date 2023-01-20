@@ -37,6 +37,7 @@ body {
 
   h1 {
     font-family: $headingFont;
+    width: 40%;
   }
 
   p {
@@ -167,7 +168,7 @@ body {
   .item:nth-last-child(1) {
     border-bottom: none;
   }
-  .item:nth-last-child(odd) {
+  .item:nth-last-child(even) {
     background-color: $accent;
     color: $light;
   }

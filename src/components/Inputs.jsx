@@ -1,6 +1,6 @@
 import React from "react";
 
-const Inputs = ({ toggle, inits, SetInits }) => {
+const Inputs = ({ toggle, initiatives, setInitiatives }) => {
   const formSubmit = async (e) => {
     e.preventDefault();
 
@@ -12,7 +12,7 @@ const Inputs = ({ toggle, inits, SetInits }) => {
       NPC: parseInt(e.target.NPC.value),
     };
 
-    SetInits([...inits, AddCharacter]);
+    setInitiatives([...initiatives, AddCharacter]);
 
     e.target.charName.value = "";
     e.target.initiative.value = null;

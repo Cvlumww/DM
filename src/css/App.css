@@ -28,6 +28,7 @@ body {
 
 .Header h1 {
   font-family: "Handlee", cursive;
+  width: 40%;
 }
 
 .Header p {
@@ -154,7 +155,7 @@ body {
   border-bottom: none;
 }
 
-.CharContainer .item:nth-last-child(odd) {
+.CharContainer .item:nth-last-child(even) {
   background-color: #1e543d;
   color: #bcdbcc;
 }

@@ -1,35 +1,33 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import Context from "../App";
 
-const HpEditor = ({ data, SetInits }) => {
-  const HealFunc = (id, HP) => {
-    const info = [...data];
-
-    // console.log("id: ", id);
-    // console.log("hp: ", HP);
-
-    const updatedHP = { id };
-    console.log(updatedHP);
-  };
-
-  const HarmFunc = (id, HP) => {};
+const HpEditor = ({ initiative, UpdateHP }) => {
+  const [hpDelta, setHpDelta] = useState(0);
 
   return (
     <div className="HPEditor">
       <button
         id="Heal"
         className="Heal"
-        onClick={() => {
-          HealFunc(data.id, data.HP);
+        onClick={(e) => {
+          UpdateHP(hpDelta, initiative.id);
         }}
       >
         Heal
       </button>
-      <input type="number" name="HPEditBox" placeholder="0" />
+      <input
+        type="number"
+        name="HPEditBox"
+        placeholder="0"
+        onChange={(e) => {
+          setHpDelta(parseInt(e.target.value));
+        }}
+      />
       <button
         id="Harm"
         className="Harm"
-        onClick={() => {
-          HarmFunc(data.id, data.HP);
+        onClick={(e) => {
+          UpdateHP(hpDelta * -1, initiative.id);
         }}
       >
         Damage

@@ -1,11 +1,15 @@
 import { useState } from "react";
 import Inputs from "./Inputs";
 
-const Header = ({ inits, SetInits, Clear, Sort }) => {
+const Header = ({ initiatives, setInitiatives, Clear, Sort }) => {
   const [popUp, SetPopUp] = useState(false);
 
   const togglePopUp = () => {
     SetPopUp(!popUp);
+  };
+
+  const handleVarDump = () => {
+    console.log(initiatives);
   };
 
   return (
@@ -22,10 +26,15 @@ const Header = ({ inits, SetInits, Clear, Sort }) => {
         <br />
         <div className="nav2">
           <button onClick={Clear}>Clear Table</button>
+          <button onClick={handleVarDump}>Var Dump</button>
         </div>
 
         {popUp && (
-          <Inputs toggle={togglePopUp} inits={inits} SetInits={SetInits} />
+          <Inputs
+            toggle={togglePopUp}
+            initiatives={initiatives}
+            setInitiatives={setInitiatives}
+          />
         )}
       </div>
     </div>

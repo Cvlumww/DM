@@ -1,17 +1,19 @@
 import Item from "./Item";
 
-const Character = ({ inits, SetInits, DeleteChar }) => {
+const Character = ({ initiatives, setInitiatives, DeleteChar, UpdateHP }) => {
   return (
     <>
-      {inits?.length > 0 ? (
+      {initiatives?.length > 0 ? (
         <div className="CharContainer">
-          {inits.map((init) => {
+          {initiatives.map((initiative) => {
             return (
               <Item
-                data={init}
-                key={init.id}
+                initiative={initiative}
+                key={initiative.id}
                 DeleteChar={DeleteChar}
-                SetInits={SetInits}
+                setInitiatives={setInitiatives}
+                initiatives={initiatives}
+                UpdateHP={UpdateHP}
               />
             );
           })}
