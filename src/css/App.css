@@ -118,7 +118,8 @@ body {
 
 @media only screen and (max-width: 900px) {
   .nav2 button {
-    max-width: 50%;
+    max-width: 51%;
+    margin-left: -2%;
   }
 }
 
