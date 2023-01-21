@@ -6,11 +6,11 @@ const Item = ({ initiative, DeleteChar, SetInits, inits, UpdateHP }) => {
     <>
       <div className="item">
         <div className="itemLeft">
-          <h4>Name: {initiative.charName}</h4>
+          <h3>Name: {initiative.charName}</h3>
 
-          <h4>Initiative Order: {initiative.initiative} </h4>
+          <h3>Initiative Order: {initiative.initiative} </h3>
 
-          <h4>HP: {initiative.HP}</h4>
+          <h3>HP: {initiative.HP}</h3>
         </div>
 
         <div className="itemRight">

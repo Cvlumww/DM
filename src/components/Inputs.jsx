@@ -40,8 +40,8 @@ const Inputs = ({ toggle, initiatives, setInitiatives }) => {
           <input type="number" placeholder="HP" name="HP" required />
 
           <div className="NPC">
-            <p>Non-Player Character:</p> No{" "}
-            <input type="range" name="NPC" max="1" id="NPCRange" /> Yes
+            <p>Player Character:</p> Yes{" "}
+            <input type="range" name="NPC" max="1" id="NPCRange" /> No
           </div>
           <input type="submit" value="Add Character" />
         </form>
