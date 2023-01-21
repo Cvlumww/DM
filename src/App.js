@@ -48,23 +48,19 @@ function App() {
     setInitiatives(initsSorted);
   };
 
-  useEffect(() => {
-    if (initiatives !== initiatives) {
-      // Sort();
-    }
-  }, [initiatives]);
+  // useEffect(() => {
+  //   if (initiatives !== initiatives) {
+  //     // Sort();
+  //   }
+  // }, [initiatives]);
 
   const UpdateHP = (num, id, e) => {
-    console.log("num: ", num);
     const updatedInitiatives = initiatives.filter((initiative) => {
       if (initiative.id === id) {
         initiative.HP += num;
       }
       return initiative;
     });
-
-    console.log("updatedInitiatives: ", updatedInitiatives);
-    console.log("Initiatives: ", initiatives);
 
     setInitiatives(updatedInitiatives);
   };
