@@ -15,6 +15,7 @@ const HpEditor = ({ initiative, UpdateHP }) => {
       >
         Heal
       </button>
+      <br />
       <input
         type="number"
         name="HPEditBox"
@@ -23,6 +24,7 @@ const HpEditor = ({ initiative, UpdateHP }) => {
           setHpDelta(parseInt(e.target.value));
         }}
       />
+      <br />
       <button
         id="Harm"
         className="Harm"

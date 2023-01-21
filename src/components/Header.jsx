@@ -8,10 +8,6 @@ const Header = ({ initiatives, setInitiatives, Clear, Sort }) => {
     SetPopUp(!popUp);
   };
 
-  const handleVarDump = () => {
-    console.log(initiatives);
-  };
-
   return (
     <div className="Header">
       <div className="">
@@ -26,7 +22,6 @@ const Header = ({ initiatives, setInitiatives, Clear, Sort }) => {
         <br />
         <div className="nav2">
           <button onClick={Clear}>Clear Table</button>
-          <button onClick={handleVarDump}>Var Dump</button>
         </div>
 
         {popUp && (

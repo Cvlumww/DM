@@ -5,9 +5,15 @@ const Item = ({ initiative, DeleteChar, SetInits, inits, UpdateHP }) => {
   return (
     <>
       <div className="item">
-        <h4>
-          Name: {initiative.charName} | Initiative Order:{" "}
-          {initiative.initiative} | HP: {initiative.HP} |{""}
+        <div className="itemLeft">
+          <h4>Name: {initiative.charName}</h4>
+
+          <h4>Initiative Order: {initiative.initiative} </h4>
+
+          <h4>HP: {initiative.HP}</h4>
+        </div>
+
+        <div className="itemRight">
           {initiative.NPC === 1 ? (
             <HP
               initiative={initiative}
@@ -18,16 +24,18 @@ const Item = ({ initiative, DeleteChar, SetInits, inits, UpdateHP }) => {
           ) : (
             <p></p>
           )}
-          {/* Delete */}
-          <span
-            onClick={() => {
-              DeleteChar(initiative.id);
-            }}
-          >
-            {" "}
-            Delete{" "}
-          </span>
-        </h4>
+        </div>
+
+        {/* Delete */}
+
+        <button
+          className="Delete"
+          onClick={() => {
+            DeleteChar(initiative.id);
+          }}
+        >
+          Delete Character
+        </button>
       </div>
     </>
   );

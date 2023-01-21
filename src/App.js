@@ -10,7 +10,29 @@ export const Context = createContext("Hello");
 function App() {
   const [pcs, SetPcs] = useState(false);
 
-  const [initiatives, setInitiatives] = useState([]);
+  const [initiatives, setInitiatives] = useState([
+    {
+      id: Math.floor(Math.random() * 1000000),
+      charName: "Xargothrax",
+      initiative: 12,
+      HP: 256,
+      NPC: 1,
+    },
+    {
+      id: Math.floor(Math.random() * 1000000),
+      charName: "Neff",
+      initiative: 13,
+      HP: 60,
+      NPC: 0,
+    },
+    {
+      id: Math.floor(Math.random() * 1000000),
+      charName: "Bandit 1",
+      initiative: 1,
+      HP: 25,
+      NPC: 1,
+    },
+  ]);
 
   const Clear = () => {
     setInitiatives([]);
