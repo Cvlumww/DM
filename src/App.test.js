@@ -10,7 +10,7 @@ test("Renders header correctly", () => {
   render(<Header />);
 
   // Header Loads Correctly
-  const headerText = screen.getByText("DnD Combat Initiative List Sorter");
+  const headerText = screen.getByText("DnD Easier Combat for GM's");
   expect(headerText).toBeInTheDocument();
 
   //   const headerButtons = screen.

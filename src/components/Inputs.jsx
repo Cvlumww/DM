@@ -23,7 +23,9 @@ const Inputs = ({ toggle, initiatives, setInitiatives }) => {
   return (
     <div className="Pop-Up">
       <div className="inputBox">
-        <button onClick={toggle}>Close</button>
+        <button onClick={toggle} className="closeForm">
+          Close
+        </button>
         <form
           action=""
           onSubmit={(e) => {

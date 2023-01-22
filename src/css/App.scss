@@ -175,6 +175,14 @@ body {
       top: 30%;
     }
 
+    // FOR CYPRESS TESTING
+    @media only screen and (max-width: 1000px) {
+      width: 30vw;
+      height: 55vh;
+
+      top: 40%;
+    }
+
     button {
       float: right;
       font-size: 20px;

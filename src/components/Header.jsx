@@ -11,12 +11,16 @@ const Header = ({ initiatives, setInitiatives, Clear, Sort }) => {
   return (
     <div className="Header">
       <div className="">
-        <h1>DnD Combat Initiative List Sorter</h1>
+        <h1>DnD Easier Combat for GM's</h1>
 
         <div className="buttons">
-          <button onClick={togglePopUp}>Add Character Here</button>
+          <button onClick={togglePopUp} className="Add" autoFocus>
+            Add Character Here
+          </button>
 
-          <button onClick={Sort}>Sort by Initiative order</button>
+          <button onClick={Sort} className="Sort">
+            Sort by Initiative order
+          </button>
         </div>
         <br />
         <br />

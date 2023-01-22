@@ -175,6 +175,14 @@ body {
   }
 }
 
+@media only screen and (max-width: 1000px) {
+  .Pop-Up .inputBox {
+    width: 30vw;
+    height: 55vh;
+    top: 40%;
+  }
+}
+
 .Pop-Up .inputBox button {
   float: right;
   font-size: 20px;
