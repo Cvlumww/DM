@@ -141,20 +141,26 @@ body {
 .Pop-Up {
   z-index: 5;
   background-color: rgba(0, 0, 0, 0.5);
-  height: 150vh;
+  height: 100vh;
   width: 100vw;
   position: absolute;
   top: 0;
   left: 0;
 }
 
+@media only screen and (max-width: 900px) {
+  .Pop-Up {
+    height: 150vh;
+  }
+}
+
 .Pop-Up .inputBox {
   padding: 25px;
   background-color: antiquewhite;
-  width: 400px;
-  height: 300px;
+  width: 20vw;
+  height: 40vh;
   position: absolute;
-  top: 30%;
+  top: 45%;
   left: 50%;
   border-radius: 10px;
   -webkit-transform: translate(-50%, -50%);
@@ -165,6 +171,7 @@ body {
   .Pop-Up .inputBox {
     width: 80vw;
     height: 50vh;
+    top: 30%;
   }
 }
 
@@ -206,9 +213,14 @@ body {
           transition-duration: 0.3s;
 }
 
+.Pop-Up .inputBox .NPC {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
 @media only screen and (max-width: 900px) {
   .Pop-Up .inputBox .NPC {
-    text-align: center;
+    padding-bottom: 0;
   }
 }
 

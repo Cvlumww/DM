@@ -144,21 +144,25 @@ body {
 .Pop-Up {
   z-index: 5;
   background-color: rgba(000, 000, 000, 0.5);
-  height: 150vh;
+  height: 100vh;
   width: 100vw;
 
   position: absolute;
   top: 0;
   left: 0;
 
+  @media only screen and (max-width: 900px) {
+    height: 150vh;
+  }
+
   .inputBox {
     padding: 25px;
     background-color: antiquewhite;
-    width: 400px;
-    height: 300px;
+    width: 20vw;
+    height: 40vh;
 
     position: absolute;
-    top: 30%;
+    top: 45%;
     left: 50%;
     border-radius: 10px;
 
@@ -167,6 +171,8 @@ body {
     @media only screen and (max-width: 900px) {
       width: 80vw;
       height: 50vh;
+
+      top: 30%;
     }
 
     button {
@@ -204,8 +210,10 @@ body {
     }
 
     .NPC {
+      text-align: center;
+      padding-bottom: 25px;
       @media only screen and (max-width: 900px) {
-        text-align: center;
+        padding-bottom: 0;
       }
       p {
         width: 200px;
