@@ -37,6 +37,12 @@ body {
   width: 100vw;
 }
 
+@media only screen and (max-width: 900px) {
+  .Header {
+    padding: 10vw;
+  }
+}
+
 .Header h1 {
   font-family: "Handlee", cursive;
   width: 40%;
@@ -66,6 +72,8 @@ body {
 @media only screen and (max-width: 900px) {
   .buttons {
     margin-top: 0px;
+    padding-right: 0px;
+    float: none;
     width: 100%;
     text-align: center;
   }
@@ -73,7 +81,12 @@ body {
 
 @media only screen and (max-width: 700px) {
   .buttons {
-    max-width: 90%;
+    max-width: 80%;
+    margin-top: 0px;
+    padding-right: 0px;
+    float: none;
+    width: 100%;
+    text-align: center;
   }
 }
 
