@@ -52,7 +52,8 @@ const Inputs = ({ toggle, initiatives, setInitiatives }) => {
           />
 
           <div className="NPC">
-            <p>Player Character:</p> Yes{" "}
+            <p>Player Character:</p>
+            <br /> Yes{" "}
             <input
               type="range"
               name="NPC"
@@ -61,6 +62,7 @@ const Inputs = ({ toggle, initiatives, setInitiatives }) => {
               autocomplete="off"
             />{" "}
             No
+            <br />
           </div>
           <input type="submit" value="Add Character" />
         </form>
