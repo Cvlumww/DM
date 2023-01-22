@@ -30,18 +30,37 @@ const Inputs = ({ toggle, initiatives, setInitiatives }) => {
             formSubmit(e);
           }}
         >
-          <input type="text" placeholder="Name" name="charName" required />
+          <input
+            type="text"
+            placeholder="Name"
+            name="charName"
+            required
+            autocomplete="off"
+          />
           <input
             type="number"
             placeholder="Initiative"
             name="initiative"
             required
           />
-          <input type="number" placeholder="HP" name="HP" required />
+          <input
+            type="number"
+            placeholder="HP"
+            name="HP"
+            required
+            autocomplete="off"
+          />
 
           <div className="NPC">
             <p>Player Character:</p> Yes{" "}
-            <input type="range" name="NPC" max="1" id="NPCRange" /> No
+            <input
+              type="range"
+              name="NPC"
+              max="1"
+              id="NPCRange"
+              autocomplete="off"
+            />{" "}
+            No
           </div>
           <input type="submit" value="Add Character" />
         </form>

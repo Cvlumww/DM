@@ -91,9 +91,12 @@ body {
 
     @media only screen and (max-width: 900px) {
       margin: auto;
+      margin-right: 2px;
+      margin-left: 2px;
+
       display: inline-block;
 
-      width: 40%;
+      width: 39vw;
     }
   }
 }
@@ -104,7 +107,8 @@ body {
   margin-top: -60px;
 
   @media only screen and (max-width: 900px) {
-    margin-top: 0px;
+    margin-top: 20px;
+    width: 80vw;
   }
   button {
     background-color: $dark;
@@ -119,8 +123,7 @@ body {
     cursor: pointer;
 
     @media only screen and (max-width: 900px) {
-      max-width: 51%;
-      margin-left: -1%;
+      max-width: 100%;
     }
   }
 }
@@ -150,8 +153,8 @@ body {
     transform: translate(-50%, -50%);
 
     @media only screen and (max-width: 900px) {
-      width: 50%;
-      height: 45%;
+      width: 80vw;
+      height: 30vh;
     }
 
     button {
@@ -309,6 +312,7 @@ body {
     width: 80vw;
     text-align: center;
     margin: auto;
+    padding-bottom: 25vh;
   }
 }
 
