@@ -82,7 +82,7 @@ function App() {
           DeleteChar={DeleteChar}
           UpdateHP={UpdateHP}
         />
-        {/* {inits !== [] ? <p>Not Empty</p> : <p>Empty</p>} */}
+
         <Footer />
       </Context.Provider>
     </div>

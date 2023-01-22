@@ -141,7 +141,7 @@ body {
 .Pop-Up {
   z-index: 5;
   background-color: rgba(0, 0, 0, 0.5);
-  height: 100vh;
+  height: 150vh;
   width: 100vw;
   position: absolute;
   top: 0;
@@ -154,7 +154,7 @@ body {
   width: 400px;
   height: 300px;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   border-radius: 10px;
   -webkit-transform: translate(-50%, -50%);
