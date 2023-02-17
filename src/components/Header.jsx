@@ -25,17 +25,17 @@ const Header = () => {
 
       <div className="buttons">
         <button onClick={togglePCPopUp} className="Add" autoFocus>
-          Add Player Character Here
+          Add Player Character
         </button>
 
         <button onClick={toggleNPCPopUp} className="Add" autoFocus>
-          Add Non-Player Character Here
+          Add Non Player Character
         </button>
         <button onClick={Clear} className="Clear">
           Clear Table
         </button>
         <button onClick={Sort} className="Sort">
-          Sort by Initiative order
+          Sort by Initiative
         </button>
       </div>
 

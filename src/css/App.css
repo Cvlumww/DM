@@ -54,8 +54,8 @@ body {
 @media only screen and (max-width: 900px) {
   .Header h1 {
     width: 100%;
-    font-size: 35px;
-    padding: 10px 10px 0px 10px;
+    font-size: 30px;
+    padding: 20px 20px 0px 20px;
     text-align: center;
     margin-left: -20px;
   }
@@ -135,7 +135,7 @@ body {
 }
 
 .Pop-Up .inputBox {
-  padding: 25px;
+  padding: 10px 25px 25px 25px;
   background-color: antiquewhite;
   width: 20vw;
   height: 25vh;
@@ -150,16 +150,8 @@ body {
 @media only screen and (max-width: 900px) {
   .Pop-Up .inputBox {
     width: 80vw;
-    height: 30vh;
+    height: 35vh;
     top: 30%;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .Pop-Up .inputBox {
-    width: 60vw;
-    height: 55vh;
-    top: 40%;
   }
 }
 
