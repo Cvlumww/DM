@@ -87,8 +87,4 @@ describe("template spec", () => {
 
     cy.get(".Sort").click();
   });
-
-  // it("Sorts the array by Initiative Order", () => {
-  //   cy.visit("localhost:3000");
-  // });
 });

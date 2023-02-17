@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Inputs from "./Inputs";
+import AppContext from "../AppContext";
 
-const Header = ({ initiatives, setInitiatives, Clear, Sort }) => {
+const Header = () => {
   const [popUp, SetPopUp] = useState(false);
-
   const togglePopUp = () => {
     SetPopUp(!popUp);
   };
+
+  const { Clear } = useContext(AppContext);
+  const { Sort } = useContext(AppContext);
+  const { initiatives } = useContext(AppContext);
 
   return (
     <div className="Header">
@@ -28,13 +32,7 @@ const Header = ({ initiatives, setInitiatives, Clear, Sort }) => {
           <button onClick={Clear}>Clear Table</button>
         </div>
 
-        {popUp && (
-          <Inputs
-            toggle={togglePopUp}
-            initiatives={initiatives}
-            setInitiatives={setInitiatives}
-          />
-        )}
+        {popUp && <Inputs toggle={togglePopUp} />}
       </div>
     </div>
   );

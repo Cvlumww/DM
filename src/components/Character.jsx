@@ -1,21 +1,16 @@
+import { useContext } from "react";
+import AppContext from "../AppContext";
 import Item from "./Item";
 
-const Character = ({ initiatives, setInitiatives, DeleteChar, UpdateHP }) => {
+const Character = ({ setInitiatives, DeleteChar, UpdateHP }) => {
+  const { initiatives } = useContext(AppContext);
+
   return (
     <>
       {initiatives?.length > 0 ? (
         <div className="CharContainer">
           {initiatives.map((initiative) => {
-            return (
-              <Item
-                initiative={initiative}
-                key={initiative.id}
-                DeleteChar={DeleteChar}
-                setInitiatives={setInitiatives}
-                initiatives={initiatives}
-                UpdateHP={UpdateHP}
-              />
-            );
+            return <Item initiative={initiative} key={initiative.id} />;
           })}
         </div>
       ) : (

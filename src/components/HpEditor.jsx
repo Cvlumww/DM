@@ -1,7 +1,9 @@
 import React, { useContext, useState } from "react";
-import Context from "../App";
+import AppContext from "../AppContext";
 
-const HpEditor = ({ initiative, UpdateHP }) => {
+const HpEditor = ({ initiative }) => {
+  const { UpdateHP } = useContext(AppContext);
+
   const [hpDelta, setHpDelta] = useState(0);
 
   return (

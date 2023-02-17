@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import AppContext from "../AppContext";
 import HP from "./HpEditor";
 
-// Start
-const Item = ({ initiative, DeleteChar, SetInits, inits, UpdateHP }) => {
+const Item = ({ initiative }) => {
+  const { DeleteChar } = useContext(AppContext);
+  const { UpdateHP } = useContext(AppContext);
+  const { initiatives } = useContext(AppContext);
+
   return (
     <>
       <div className="item">
@@ -14,16 +19,7 @@ const Item = ({ initiative, DeleteChar, SetInits, inits, UpdateHP }) => {
         </div>
 
         <div className="itemRight">
-          {initiative.NPC === 1 ? (
-            <HP
-              initiative={initiative}
-              SetInits={SetInits}
-              inits={inits}
-              UpdateHP={UpdateHP}
-            />
-          ) : (
-            <p></p>
-          )}
+          {initiative.NPC === 1 ? <HP initiative={initiative} /> : <p></p>}
         </div>
 
         {/* Delete */}
