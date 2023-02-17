@@ -41,35 +41,42 @@ body {
 // Header
 .Header {
   font-size: 20px;
-  padding: 50px;
+  padding: 50px 0;
+  text-align: center;
   width: 100vw;
 
   @media only screen and (max-width: 900px) {
-    padding: 10vw;
+    padding: 5vw 0;
   }
+
   h1 {
     font-family: $headingFont;
-    width: 40%;
+    width: 100vw;
+    text-align: center;
+    padding: 0px;
 
     @media only screen and (max-width: 900px) {
-      width: 80%;
-      font-size: 40px;
-      padding: 10px;
+      width: 100%;
+      font-size: 35px;
+      padding: 10px 10px 0px 10px;
       text-align: center;
       margin-left: -20px;
     }
   }
-
-  p {
-    width: 30%;
-  }
 }
 
 .buttons {
-  float: right;
-  margin-top: -80px;
-  padding-right: 75px;
   text-align: center;
+
+  @media only screen and (max-width: 1200px) {
+    margin-top: 0px;
+    padding-right: 0px;
+    float: none;
+
+    width: 100%;
+    // display: block;
+    text-align: center;
+  }
 
   @media only screen and (max-width: 900px) {
     margin-top: 0px;
@@ -81,16 +88,6 @@ body {
     text-align: center;
   }
 
-  @media only screen and (max-width: 700px) {
-    max-width: 80%;
-    margin-top: 0px;
-    padding-right: 0px;
-    float: none;
-
-    width: 100%;
-    // display: block;
-    text-align: center;
-  }
   button {
     background-color: $dark;
     color: $light;
@@ -99,44 +96,31 @@ body {
     font-size: 20px;
     cursor: pointer;
     margin-right: 5px;
+    margin-bottom: 5px;
+
     border-radius: 4px;
 
     @media only screen and (max-width: 900px) {
       margin: auto;
       margin-right: 2px;
       margin-left: 2px;
+      margin-top: 5px;
 
       display: inline-block;
 
-      width: 39vw;
+      width: 40vw;
+      min-height: 80px;
     }
   }
-}
 
-.nav2 {
-  float: left;
-
-  margin-top: -60px;
-
-  @media only screen and (max-width: 900px) {
-    margin-top: 20px;
-    width: 80vw;
+  .Clear:hover {
+    background-color: #b00a07;
+    // color: $dark;
+    text-decoration: underline;
   }
-  button {
-    background-color: $dark;
 
-    color: $light;
-    padding: 15px;
-
-    border-radius: 4px;
-
-    width: 505px;
-    font-size: 20px;
-    cursor: pointer;
-
-    @media only screen and (max-width: 900px) {
-      max-width: 100%;
-    }
+  .Clear {
+    transition-duration: 0.3s;
   }
 }
 
@@ -159,7 +143,7 @@ body {
     padding: 25px;
     background-color: antiquewhite;
     width: 20vw;
-    height: 40vh;
+    height: 25vh;
 
     position: absolute;
     top: 45%;
@@ -170,7 +154,7 @@ body {
 
     @media only screen and (max-width: 900px) {
       width: 80vw;
-      height: 50vh;
+      height: 30vh;
 
       top: 30%;
     }
@@ -216,23 +200,6 @@ body {
       color: $light;
       transition-duration: 0.3s;
     }
-
-    .NPC {
-      text-align: center;
-      padding-bottom: 25px;
-      @media only screen and (max-width: 900px) {
-        padding-bottom: 0;
-      }
-      p {
-        width: 200px;
-        display: inline-block;
-      }
-
-      // Range
-      input[type="range"] {
-        width: 50px;
-      }
-    }
   }
 }
 
@@ -242,17 +209,17 @@ body {
   margin-left: 50px;
   margin-bottom: 50px;
 
-  width: 500px;
+  width: 25vw;
   overflow-y: hidden;
 
   @media only screen and (max-width: 1200px) {
-    width: 34%;
+    width: 60%;
     margin: auto;
     margin-bottom: 150px;
   }
 
   @media only screen and (max-width: 900px) {
-    width: 40%;
+    width: 80%;
     margin: auto;
     margin-bottom: 150px;
   }
@@ -289,6 +256,13 @@ body {
     color: $light;
     cursor: pointer;
     font-size: 20px;
+
+    transition-duration: 0.3s;
+  }
+  .Delete:hover {
+    background-color: #b00a07;
+    // color: $dark;
+    text-decoration: underline;
   }
 
   .itemLeft {
@@ -354,7 +328,7 @@ body {
   font-family: $headingFont;
   font-size: 20px;
   text-align: center;
-  padding: 25px;
+  padding: 25px 0;
 
   overflow-y: hidden !important;
 

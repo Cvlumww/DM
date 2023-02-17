@@ -1,11 +1,18 @@
 import { useState, useContext } from "react";
-import Inputs from "./Inputs";
 import AppContext from "../AppContext";
 
+import Inputs from "./Inputs";
+import InputsPC from "./InputsPC";
+
 const Header = () => {
-  const [popUp, SetPopUp] = useState(false);
-  const togglePopUp = () => {
-    SetPopUp(!popUp);
+  const [npcPopUp, SetNpcPopUp] = useState(false);
+  const toggleNPCPopUp = () => {
+    SetNpcPopUp(!npcPopUp);
+  };
+
+  const [pcPopUp, SetPcPopUp] = useState(false);
+  const togglePCPopUp = () => {
+    SetPcPopUp(!pcPopUp);
   };
 
   const { Clear } = useContext(AppContext);
@@ -14,26 +21,28 @@ const Header = () => {
 
   return (
     <div className="Header">
-      <div className="">
-        <h1>DnD Easier Combat for GM's</h1>
+      <h1>DnD Easier Combat for GM's</h1>
 
-        <div className="buttons">
-          <button onClick={togglePopUp} className="Add" autoFocus>
-            Add Character Here
-          </button>
+      <div className="buttons">
+        <button onClick={togglePCPopUp} className="Add" autoFocus>
+          Add Player Character Here
+        </button>
 
-          <button onClick={Sort} className="Sort">
-            Sort by Initiative order
-          </button>
-        </div>
-        <br />
-        <br />
-        <div className="nav2">
-          <button onClick={Clear}>Clear Table</button>
-        </div>
-
-        {popUp && <Inputs toggle={togglePopUp} />}
+        <button onClick={toggleNPCPopUp} className="Add" autoFocus>
+          Add Non-Player Character Here
+        </button>
+        <button onClick={Clear} className="Clear">
+          Clear Table
+        </button>
+        <button onClick={Sort} className="Sort">
+          Sort by Initiative order
+        </button>
       </div>
+
+      <div className="nav2"></div>
+
+      {npcPopUp && <Inputs toggle={toggleNPCPopUp} />}
+      {pcPopUp && <InputsPC toggle={togglePCPopUp} />}
     </div>
   );
 };

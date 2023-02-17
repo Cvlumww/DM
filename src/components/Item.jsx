@@ -15,7 +15,7 @@ const Item = ({ initiative }) => {
 
           <h3>Initiative Order: {initiative.initiative} </h3>
 
-          <h3>HP: {initiative.HP}</h3>
+          {initiative.NPC === 1 ? <h3>HP: {initiative.HP}</h3> : <p></p>}
         </div>
 
         <div className="itemRight">

@@ -33,43 +33,39 @@ body {
 
 .Header {
   font-size: 20px;
-  padding: 50px;
+  padding: 50px 0;
+  text-align: center;
   width: 100vw;
 }
 
 @media only screen and (max-width: 900px) {
   .Header {
-    padding: 10vw;
+    padding: 5vw 0;
   }
 }
 
 .Header h1 {
   font-family: "Handlee", cursive;
-  width: 40%;
+  width: 100vw;
+  text-align: center;
+  padding: 0px;
 }
 
 @media only screen and (max-width: 900px) {
   .Header h1 {
-    width: 80%;
-    font-size: 40px;
-    padding: 10px;
+    width: 100%;
+    font-size: 35px;
+    padding: 10px 10px 0px 10px;
     text-align: center;
     margin-left: -20px;
   }
 }
 
-.Header p {
-  width: 30%;
-}
-
 .buttons {
-  float: right;
-  margin-top: -80px;
-  padding-right: 75px;
   text-align: center;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1200px) {
   .buttons {
     margin-top: 0px;
     padding-right: 0px;
@@ -79,9 +75,8 @@ body {
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
   .buttons {
-    max-width: 80%;
     margin-top: 0px;
     padding-right: 0px;
     float: none;
@@ -97,6 +92,7 @@ body {
   font-size: 20px;
   cursor: pointer;
   margin-right: 5px;
+  margin-bottom: 5px;
   border-radius: 4px;
 }
 
@@ -105,37 +101,21 @@ body {
     margin: auto;
     margin-right: 2px;
     margin-left: 2px;
+    margin-top: 5px;
     display: inline-block;
-    width: 39vw;
+    width: 40vw;
+    min-height: 80px;
   }
 }
 
-.nav2 {
-  float: left;
-  margin-top: -60px;
+.buttons .Clear:hover {
+  background-color: #b00a07;
+  text-decoration: underline;
 }
 
-@media only screen and (max-width: 900px) {
-  .nav2 {
-    margin-top: 20px;
-    width: 80vw;
-  }
-}
-
-.nav2 button {
-  background-color: #101211;
-  color: #bcdbcc;
-  padding: 15px;
-  border-radius: 4px;
-  width: 505px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 900px) {
-  .nav2 button {
-    max-width: 100%;
-  }
+.buttons .Clear {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 .Pop-Up {
@@ -158,7 +138,7 @@ body {
   padding: 25px;
   background-color: antiquewhite;
   width: 20vw;
-  height: 40vh;
+  height: 25vh;
   position: absolute;
   top: 45%;
   left: 50%;
@@ -170,7 +150,7 @@ body {
 @media only screen and (max-width: 900px) {
   .Pop-Up .inputBox {
     width: 80vw;
-    height: 50vh;
+    height: 30vh;
     top: 30%;
   }
 }
@@ -221,37 +201,17 @@ body {
           transition-duration: 0.3s;
 }
 
-.Pop-Up .inputBox .NPC {
-  text-align: center;
-  padding-bottom: 25px;
-}
-
-@media only screen and (max-width: 900px) {
-  .Pop-Up .inputBox .NPC {
-    padding-bottom: 0;
-  }
-}
-
-.Pop-Up .inputBox .NPC p {
-  width: 200px;
-  display: inline-block;
-}
-
-.Pop-Up .inputBox .NPC input[type="range"] {
-  width: 50px;
-}
-
 .CharContainer {
   border: 3px solid #325d41;
   margin-left: 50px;
   margin-bottom: 50px;
-  width: 500px;
+  width: 25vw;
   overflow-y: hidden;
 }
 
 @media only screen and (max-width: 1200px) {
   .CharContainer {
-    width: 34%;
+    width: 60%;
     margin: auto;
     margin-bottom: 150px;
   }
@@ -259,7 +219,7 @@ body {
 
 @media only screen and (max-width: 900px) {
   .CharContainer {
-    width: 40%;
+    width: 80%;
     margin: auto;
     margin-bottom: 150px;
   }
@@ -301,6 +261,13 @@ body {
   color: #bcdbcc;
   cursor: pointer;
   font-size: 20px;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.CharContainer .Delete:hover {
+  background-color: #b00a07;
+  text-decoration: underline;
 }
 
 .CharContainer .itemLeft {
@@ -365,7 +332,7 @@ body {
   font-family: "Handlee", cursive;
   font-size: 20px;
   text-align: center;
-  padding: 25px;
+  padding: 25px 0;
   overflow-y: hidden !important;
   width: 100vw;
 }

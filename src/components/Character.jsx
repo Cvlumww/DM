@@ -2,7 +2,7 @@ import { useContext } from "react";
 import AppContext from "../AppContext";
 import Item from "./Item";
 
-const Character = ({ setInitiatives, DeleteChar, UpdateHP }) => {
+const Character = () => {
   const { initiatives } = useContext(AppContext);
 
   return (

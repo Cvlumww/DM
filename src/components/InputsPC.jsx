@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import AppContext from "../AppContext";
 
 const Inputs = ({ toggle }) => {
-  const { formSubmitNPC } = useContext(AppContext);
+  const { formSubmitPC } = useContext(AppContext);
 
   return (
     <div className="Pop-Up">
@@ -14,7 +14,7 @@ const Inputs = ({ toggle }) => {
         <form
           action=""
           onSubmit={(e) => {
-            formSubmitNPC(e);
+            formSubmitPC(e);
           }}
         >
           <input
@@ -30,14 +30,6 @@ const Inputs = ({ toggle }) => {
             name="initiative"
             autoComplete="off"
             required
-          />
-
-          <input
-            type="number"
-            placeholder="HP"
-            name="HP"
-            id="HP"
-            autoComplete="off"
           />
 
           <input type="submit" value="Add Character" />

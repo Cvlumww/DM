@@ -35,7 +35,7 @@ export function AppProvider({ children }) {
       charName: e.target.charName.value,
       initiative: parseInt(e.target.initiative.value),
       HP: parseInt(e.target.HP.value),
-      NPC: parseInt(e.target.NPC.value),
+      NPC: 1,
     };
 
     setInitiatives([...initiatives, AddCharacterNPC]);
@@ -44,7 +44,23 @@ export function AppProvider({ children }) {
     e.target.charName.value = "";
     e.target.initiative.value = null;
     e.target.HP.value = null;
-    e.target.NPC.value = 0;
+  };
+
+  const formSubmitPC = async (e) => {
+    e.preventDefault();
+
+    const AddCharacterPC = {
+      id: Math.floor(Math.random() * 1000000),
+      charName: e.target.charName.value,
+      initiative: parseInt(e.target.initiative.value),
+      NPC: 0,
+    };
+
+    setInitiatives([...initiatives, AddCharacterPC]);
+    console.log("Add PC");
+
+    e.target.charName.value = "";
+    e.target.initiative.value = null;
   };
 
   const Clear = () => {
@@ -74,7 +90,15 @@ export function AppProvider({ children }) {
 
   return (
     <AppContext.Provider
-      value={{ initiatives, formSubmitNPC, Clear, DeleteChar, Sort, UpdateHP }}
+      value={{
+        initiatives,
+        formSubmitNPC,
+        Clear,
+        DeleteChar,
+        Sort,
+        UpdateHP,
+        formSubmitPC,
+      }}
     >
       {children}
     </AppContext.Provider>
