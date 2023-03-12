@@ -369,13 +369,17 @@ body {
 }
 
 .DeathSaves {
-  border: 1px solid red;
   width: 100%;
   text-align: center;
 }
 
 .DeathSaves h4 {
   margin: 0;
+}
+
+.DeathSaves .Fails .fails {
+  accent-color: #b00a07;
+  width: 10%;
 }
 
 .DeathSaves .LastChance .Heal {

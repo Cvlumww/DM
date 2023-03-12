@@ -20,25 +20,28 @@ const DeathSaves = ({ initiative }) => {
         <input
           type="checkbox"
           name="Fail-1"
+          className="fails"
           id="Fail-1"
-          onClick={() => {
-            HandleDeathSavingThrows(initiative.id);
+          onChange={(e) => {
+            HandleDeathSavingThrows(e, initiative.id);
           }}
         />
         <input
           type="checkbox"
           name="Fail-2"
+          className="fails"
           id="Fail-2"
-          onClick={() => {
-            HandleDeathSavingThrows(initiative.id);
+          onChange={(e) => {
+            HandleDeathSavingThrows(e, initiative.id);
           }}
         />
         <input
           type="checkbox"
           name="Fail-3"
+          className="fails"
           id="Fail-3"
-          onClick={() => {
-            HandleDeathSavingThrows(initiative.id);
+          onChange={(e) => {
+            HandleDeathSavingThrows(e, initiative.id);
           }}
         />
       </div>
