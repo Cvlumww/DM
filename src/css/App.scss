@@ -247,7 +247,7 @@ body {
   }
 
   .Delete {
-    width: 100%;
+    width: 99%;
     padding: 20px;
     margin-left: 1%;
     margin-right: 1%;
@@ -367,6 +367,39 @@ body {
     text-align: center;
     margin: auto;
     padding-bottom: 25vh;
+  }
+}
+
+// Death Saves
+.DeathSaves {
+  border: 1px solid red;
+  width: 100%;
+  text-align: center;
+  h4 {
+    margin: 0;
+  }
+
+  .Saves {
+  }
+  .Fails {
+  }
+
+  .LastChance {
+    .Heal {
+      color: greenyellow;
+      background-color: $dark;
+      border-radius: 4px;
+      margin: auto;
+
+      width: 70px;
+      padding: 3px 7px;
+      cursor: pointer;
+    }
+
+    .HPEditBox {
+      width: 40%;
+      text-align: center;
+    }
   }
 }
 

@@ -4,27 +4,27 @@ const AppContext = createContext();
 
 export function AppProvider({ children }) {
   const [initiatives, setInitiatives] = useState([
-    // {
-    //   id: Math.floor(Math.random() * 1000000),
-    //   charName: "Xargothrax",
-    //   initiative: 12,
-    //   HP: 256,
-    //   NPC: 1,
-    // },
-    // {
-    //   id: Math.floor(Math.random() * 1000000),
-    //   charName: "Neff",
-    //   initiative: 13,
-    //   HP: 60,
-    //   NPC: 0,
-    // },
-    // {
-    //   id: Math.floor(Math.random() * 1000000),
-    //   charName: "Arson",
-    //   initiative: 16,
-    //   HP: 52,
-    //   NPC: 0,
-    // },
+    {
+      id: Math.floor(Math.random() * 1000000),
+      charName: "Xargothrax",
+      initiative: 12,
+      HP: 256,
+      NPC: 1,
+    },
+    {
+      id: Math.floor(Math.random() * 1000000),
+      charName: "Neff",
+      initiative: 13,
+      HP: 60,
+      NPC: 1,
+    },
+    {
+      id: Math.floor(Math.random() * 1000000),
+      charName: "Arson",
+      initiative: 16,
+      HP: 52,
+      NPC: 1,
+    },
   ]);
 
   // This adds a Non Player Character to the list
@@ -104,6 +104,26 @@ export function AppProvider({ children }) {
     setInitiatives(updatedInitiativeHP);
   };
 
+  // This finds if an NPC is at 0 HP
+  const HandleNPCDeath = (id) => {
+    initiatives.filter((initiative) => {
+      if (initiative.id === id && initiative.HP === 0) {
+        console.log("Zero HP: ", initiative.charName, initiative.HP);
+      }
+
+      return initiative;
+    });
+  };
+
+  // This counts to 3 then calls the DeleteChar() function
+  let counter = 0;
+  const HandleDeathSavingThrows = (id) => {
+    counter++;
+    if (counter === 3) {
+      DeleteChar(id);
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -115,6 +135,8 @@ export function AppProvider({ children }) {
         UpdateHP,
         formSubmitPC,
         UpdateInitiative,
+        HandleNPCDeath,
+        HandleDeathSavingThrows,
       }}
     >
       {children}

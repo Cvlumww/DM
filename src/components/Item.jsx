@@ -1,11 +1,19 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import AppContext from "../AppContext";
-import InitEditor from "../components/InitiativeEditor";
+import InitEditor from "./InitiativeEditor";
 import HP from "./HpEditor";
+import Death from "./DeathSaves";
 
 const Item = ({ initiative }) => {
   const { DeleteChar } = useContext(AppContext);
+  const { HandleNPCDeath } = useContext(AppContext);
+
   const [showInitiativeEditor, setShowInitiativeEditor] = useState(false);
+
+  useEffect(() => {
+    //Runs on every render
+    HandleNPCDeath(initiative.id);
+  });
 
   return (
     <>
@@ -24,7 +32,21 @@ const Item = ({ initiative }) => {
         </div>
 
         <div className="itemRight">
-          {initiative.NPC === 1 ? <HP initiative={initiative} /> : <p></p>}
+          {/* {(initiative.NPC === 1){
+            return <HP initiative={initiative} />
+          }}   */}
+
+          {initiative.NPC === 1 ? (
+            <>
+              {initiative.HP < 1 ? (
+                <Death initiative={initiative} />
+              ) : (
+                <HP initiative={initiative} />
+              )}
+            </>
+          ) : (
+            <p></p>
+          )}
 
           {showInitiativeEditor === true ? (
             <InitEditor initiative={initiative} />
@@ -34,7 +56,6 @@ const Item = ({ initiative }) => {
         </div>
 
         {/* Delete or Edit button conditional render */}
-
         {initiative.NPC === 1 ? (
           <button
             className="Delete"
