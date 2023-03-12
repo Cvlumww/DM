@@ -17,7 +17,6 @@ const Header = () => {
 
   const { Clear } = useContext(AppContext);
   const { Sort } = useContext(AppContext);
-  const { initiatives } = useContext(AppContext);
 
   return (
     <div className="Header">

@@ -6,27 +6,28 @@ export function AppProvider({ children }) {
   const [initiatives, setInitiatives] = useState([
     // {
     //   id: Math.floor(Math.random() * 1000000),
-    //   charName: "Xargothrax 2",
+    //   charName: "Xargothrax",
     //   initiative: 12,
     //   HP: 256,
     //   NPC: 1,
     // },
     // {
     //   id: Math.floor(Math.random() * 1000000),
-    //   charName: "Neff 2",
+    //   charName: "Neff",
     //   initiative: 13,
     //   HP: 60,
     //   NPC: 0,
     // },
     // {
     //   id: Math.floor(Math.random() * 1000000),
-    //   charName: "Bandit 1 - 2",
-    //   initiative: 1,
-    //   HP: 25,
-    //   NPC: 1,
+    //   charName: "Arson",
+    //   initiative: 16,
+    //   HP: 52,
+    //   NPC: 0,
     // },
   ]);
 
+  // This adds a Non Player Character to the list
   const formSubmitNPC = async (e) => {
     e.preventDefault();
 
@@ -39,13 +40,13 @@ export function AppProvider({ children }) {
     };
 
     setInitiatives([...initiatives, AddCharacterNPC]);
-    console.log("Add NPC");
 
     e.target.charName.value = "";
     e.target.initiative.value = null;
     e.target.HP.value = null;
   };
 
+  // This adds a Player Character to the list
   const formSubmitPC = async (e) => {
     e.preventDefault();
 
@@ -57,35 +58,50 @@ export function AppProvider({ children }) {
     };
 
     setInitiatives([...initiatives, AddCharacterPC]);
-    console.log("Add PC");
 
     e.target.charName.value = "";
     e.target.initiative.value = null;
   };
 
+  // Clears the list
   const Clear = () => {
     setInitiatives([]);
   };
 
+  // This deletes and removes a character from the list
   const DeleteChar = (id) => {
     setInitiatives(initiatives.filter((init) => init.id !== id));
   };
 
+  // This sorts the list of initiatives
   const Sort = () => {
     const initsSorted = [...initiatives];
     initsSorted.sort((a, b) => (a.initiative > b.initiative ? -1 : 1));
     setInitiatives(initsSorted);
   };
 
-  const UpdateHP = (num, id, e) => {
-    const updatedInitiatives = initiatives.filter((initiative) => {
+  // This updates the initiative for a specific character
+  const UpdateInitiative = (num, id) => {
+    const updatedInitiativeInitiative = initiatives.filter((initiative) => {
+      if (initiative.id === id) {
+        initiative.initiative = num;
+      }
+      return initiative;
+    });
+
+    setInitiatives(updatedInitiativeInitiative);
+  };
+
+  // This updates the HP Value for NPC's
+  const UpdateHP = (num, id) => {
+    const updatedInitiativeHP = initiatives.filter((initiative) => {
       if (initiative.id === id) {
         initiative.HP += num;
       }
       return initiative;
     });
 
-    setInitiatives(updatedInitiatives);
+    setInitiatives(updatedInitiativeHP);
   };
 
   return (
@@ -98,6 +114,7 @@ export function AppProvider({ children }) {
         Sort,
         UpdateHP,
         formSubmitPC,
+        UpdateInitiative,
       }}
     >
       {children}

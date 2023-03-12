@@ -19,8 +19,6 @@ html {
 body {
   background-color: $light;
   color: $dark;
-  // background-color: $dark;
-  // color: $light;
   padding: 0;
   margin: 0;
   overflow-x: hidden !important;
@@ -251,7 +249,9 @@ body {
   .Delete {
     width: 100%;
     padding: 20px;
-    // background-color: rgba(217, 3, 104, 0.5);
+    margin-left: 1%;
+    margin-right: 1%;
+
     background-color: $dark;
     color: $light;
     cursor: pointer;
@@ -261,8 +261,58 @@ body {
   }
   .Delete:hover {
     background-color: #b00a07;
-    // color: $dark;
+
     text-decoration: underline;
+  }
+
+  .DeleteEdit {
+    width: 48%;
+    padding: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    background-color: $dark;
+    color: $light;
+    cursor: pointer;
+    font-size: 20px;
+
+    transition-duration: 0.3s;
+  }
+  .DeleteEdit:hover {
+    background-color: #b00a07;
+
+    text-decoration: underline;
+  }
+
+  .Edit {
+    width: 48%;
+    padding: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    background-color: $dark;
+    color: $light;
+    cursor: pointer;
+    font-size: 20px;
+
+    transition-duration: 0.3s;
+  }
+
+  .Edit:hover {
+    background-color: $lav;
+    color: $dark;
+
+    text-decoration: underline;
+  }
+
+  .Update {
+    color: $lav;
+    background-color: $dark;
+    border-radius: 4px;
+    margin: auto;
+    width: 70px;
+    padding: 3px 7px;
+    cursor: pointer;
   }
 
   .itemLeft {
@@ -286,6 +336,7 @@ body {
 
     width: 70px;
     padding: 3px 7px;
+    cursor: pointer;
   }
   .Harm {
     color: #d90368;
@@ -295,6 +346,7 @@ body {
 
     width: 70px;
     padding: 3px 7px;
+    cursor: pointer;
   }
   input {
     margin: 5px auto;

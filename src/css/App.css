@@ -249,6 +249,8 @@ body {
 .CharContainer .Delete {
   width: 100%;
   padding: 20px;
+  margin-left: 1%;
+  margin-right: 1%;
   background-color: #101211;
   color: #bcdbcc;
   cursor: pointer;
@@ -260,6 +262,53 @@ body {
 .CharContainer .Delete:hover {
   background-color: #b00a07;
   text-decoration: underline;
+}
+
+.CharContainer .DeleteEdit {
+  width: 48%;
+  padding: 20px;
+  margin-left: 1%;
+  margin-right: 1%;
+  background-color: #101211;
+  color: #bcdbcc;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.CharContainer .DeleteEdit:hover {
+  background-color: #b00a07;
+  text-decoration: underline;
+}
+
+.CharContainer .Edit {
+  width: 48%;
+  padding: 20px;
+  margin-left: 1%;
+  margin-right: 1%;
+  background-color: #101211;
+  color: #bcdbcc;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.CharContainer .Edit:hover {
+  background-color: #d4c2fc;
+  color: #101211;
+  text-decoration: underline;
+}
+
+.CharContainer .Update {
+  color: #d4c2fc;
+  background-color: #101211;
+  border-radius: 4px;
+  margin: auto;
+  width: 70px;
+  padding: 3px 7px;
+  cursor: pointer;
 }
 
 .CharContainer .itemLeft {
@@ -283,6 +332,7 @@ body {
   margin: auto;
   width: 70px;
   padding: 3px 7px;
+  cursor: pointer;
 }
 
 .HPEditor .Harm {
@@ -292,6 +342,7 @@ body {
   margin: auto;
   width: 70px;
   padding: 3px 7px;
+  cursor: pointer;
 }
 
 .HPEditor input {
