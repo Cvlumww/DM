@@ -13,7 +13,7 @@ export function AppProvider({ children }) {
     // },
     // {
     //   id: Math.floor(Math.random() * 1000000),
-    //   charName: "Neff",
+    //   charName: "Neph",
     //   initiative: 13,
     //   HP: 60,
     //   NPC: 0,
@@ -31,6 +31,8 @@ export function AppProvider({ children }) {
   const formSubmitNPC = async (e) => {
     e.preventDefault();
 
+    const x = e.target.multiplier.value;
+
     const AddCharacterNPC = {
       id: Math.floor(Math.random() * 1000000),
       charName: e.target.charName.value,
@@ -39,11 +41,14 @@ export function AppProvider({ children }) {
       NPC: 1,
     };
 
-    setInitiatives([...initiatives, AddCharacterNPC]);
+    [...Array(x)].map((_, x) => {
+      setInitiatives([...initiatives, AddCharacterNPC]);
+    });
 
     e.target.charName.value = "";
     e.target.initiative.value = null;
     e.target.HP.value = null;
+    e.target.multiplier.value = null;
   };
 
   // This adds a Player Character to the list
@@ -125,7 +130,7 @@ export function AppProvider({ children }) {
         console.log("Number of Times Fail-1 has been pressed: ", no1);
       }
 
-      if (isChecked == true) {
+      if (isChecked === true) {
         counter++;
         console.log("Fail-1 - Counter: ", counter);
       }
@@ -144,7 +149,7 @@ export function AppProvider({ children }) {
         console.log("Number of Times Fail-2 has been pressed: ", no2);
       }
 
-      if (isChecked == true) {
+      if (isChecked === true) {
         counter++;
         console.log("Fail-2 - Counter: ", counter);
       }
@@ -163,7 +168,7 @@ export function AppProvider({ children }) {
         console.log("Number of Times Fail-3 has been pressed: ", no3);
       }
 
-      if (isChecked == true) {
+      if (isChecked === true) {
         counter++;
         console.log("Fail-3 - Counter: ", counter);
       }

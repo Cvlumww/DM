@@ -1,0 +1,91 @@
+// Input Popup
+.Pop-Up {
+  z-index: 5;
+  background-color: rgba(000, 000, 000, 0.5);
+  height: 100vh;
+  width: 100vw;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @media only screen and (max-width: 900px) {
+    height: 150vh;
+  }
+
+  .inputBox {
+    z-index: 50;
+    padding: 25px;
+    background-color: $dark;
+    width: 300px;
+    // height: 500px;
+    margin: 150px auto;
+    border-radius: 10px;
+    overflow-x: hidden;
+
+    border: 1px solid $light;
+
+    display: flex;
+    flex-direction: column;
+
+    form {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      width: 83%;
+      font-size: 20px;
+      margin: 10px auto 0;
+      // border-radius: 4px;
+      background-color: $dark;
+      border: 1px solid $light;
+      padding: 25px;
+
+      color: $light;
+    }
+
+    // Close Buttons
+    .closeForm {
+      width: 100%;
+      font-size: 20px;
+      // margin: 10px auto 0;
+      border-radius: 4px;
+      background-color: $dark;
+      border: 1px solid $light;
+      padding: 25px;
+      cursor: pointer;
+      color: $light;
+      transition-duration: 0.3s;
+    }
+
+    .closeForm:hover {
+      background-color: #f61517;
+      color: $dark;
+      text-decoration: underline;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    // Button AddCharacter
+    input[type="submit"] {
+      width: 100%;
+      font-size: 20px;
+      margin: 10px auto 0;
+      cursor: pointer;
+      transition-duration: 0.3s;
+
+      color: $light;
+    }
+
+    input[type="submit"]:hover {
+      background-color: $light;
+      color: $dark;
+      transition-duration: 0.3s;
+    }
+  }
+}

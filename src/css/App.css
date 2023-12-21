@@ -1,16 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Hind&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300&display=swap");
 html {
   overflow-x: hidden !important;
 }
 
 body {
-  background-color: #bcdbcc;
-  color: #101211;
+  background-color: #101211;
+  color: #deaddd;
   padding: 0;
   margin: 0;
   overflow-x: hidden !important;
-  font-family: "Hind", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 @media only screen and (max-width: 900px) {
@@ -45,7 +44,7 @@ body {
 }
 
 .Header h1 {
-  font-family: "Handlee", cursive;
+  font-family: "Playfair Display", serif;
   width: 100vw;
   text-align: center;
   padding: 0px;
@@ -63,54 +62,41 @@ body {
 
 .buttons {
   text-align: center;
-}
-
-@media only screen and (max-width: 1200px) {
-  .buttons {
-    margin-top: 0px;
-    padding-right: 0px;
-    float: none;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .buttons {
-    margin-top: 0px;
-    padding-right: 0px;
-    float: none;
-    width: 100%;
-    text-align: center;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80%;
+  margin: auto;
 }
 
 .buttons button {
   background-color: #101211;
-  color: #bcdbcc;
+  color: #deaddd;
   padding: 15px;
   font-size: 20px;
   cursor: pointer;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  border: 1px solid #deaddd;
+  margin: 25px;
   border-radius: 4px;
-}
-
-@media only screen and (max-width: 900px) {
-  .buttons button {
-    margin: auto;
-    margin-right: 2px;
-    margin-left: 2px;
-    margin-top: 5px;
-    display: inline-block;
-    width: 40vw;
-    min-height: 80px;
-  }
+  width: 50%;
 }
 
 .buttons .Clear:hover {
-  background-color: #b00a07;
+  background-color: #f61517;
+  color: #101211;
   text-decoration: underline;
+  font-size: 26px;
+  font-weight: 700;
 }
 
 .buttons .Clear {
@@ -135,66 +121,86 @@ body {
 }
 
 .Pop-Up .inputBox {
-  padding: 10px 25px 25px 25px;
-  background-color: antiquewhite;
-  width: 20vw;
-  height: 25vh;
-  position: absolute;
-  top: 45%;
-  left: 50%;
+  z-index: 50;
+  padding: 25px;
+  background-color: #101211;
+  width: 300px;
+  margin: 150px auto;
   border-radius: 10px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  overflow-x: hidden;
+  border: 1px solid #deaddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-@media only screen and (max-width: 900px) {
-  .Pop-Up .inputBox {
-    width: 80vw;
-    height: 35vh;
-    top: 30%;
-  }
-}
-
-.Pop-Up .inputBox button {
-  float: right;
-  font-size: 20px;
-  margin: 10px auto 0;
-  cursor: pointer;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-}
-
-.Pop-Up .inputBox button:hover {
-  background-color: #325d41;
-  color: #bcdbcc;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+.Pop-Up .inputBox form {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .Pop-Up .inputBox input {
-  width: 98%;
+  width: 83%;
   font-size: 20px;
   margin: 10px auto 0;
+  background-color: #101211;
+  border: 1px solid #deaddd;
+  padding: 25px;
+  color: #deaddd;
+}
+
+.Pop-Up .inputBox .closeForm {
+  width: 100%;
+  font-size: 20px;
   border-radius: 4px;
+  background-color: #101211;
+  border: 1px solid #deaddd;
+  padding: 25px;
+  cursor: pointer;
+  color: #deaddd;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.Pop-Up .inputBox .closeForm:hover {
+  background-color: #f61517;
+  color: #101211;
+  text-decoration: underline;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .Pop-Up .inputBox input[type="submit"] {
+  width: 100%;
   font-size: 20px;
   margin: 10px auto 0;
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
+  color: #deaddd;
 }
 
 .Pop-Up .inputBox input[type="submit"]:hover {
-  background-color: #325d41;
-  color: #bcdbcc;
+  background-color: #deaddd;
+  color: #101211;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
 }
 
 .CharContainer {
-  border: 3px solid #325d41;
+  border: 3px solid #a04daa;
   margin-left: 50px;
   margin-bottom: 50px;
   width: 25vw;
@@ -227,8 +233,8 @@ body {
 
 .CharContainer .item {
   padding: 25px;
-  border-bottom: 3px solid #325d41;
-  color: #101211;
+  border-bottom: 3px solid #a04daa;
+  color: #deaddd;
 }
 
 @media only screen and (max-width: 700px) {
@@ -242,8 +248,8 @@ body {
 }
 
 .CharContainer .item:nth-last-child(even) {
-  background-color: #325d41;
-  color: #bcdbcc;
+  background-color: #a04daa;
+  color: #deaddd;
 }
 
 .CharContainer .Delete {
@@ -252,7 +258,7 @@ body {
   margin-left: 1%;
   margin-right: 1%;
   background-color: #101211;
-  color: #bcdbcc;
+  color: #deaddd;
   cursor: pointer;
   font-size: 20px;
   -webkit-transition-duration: 0.3s;
@@ -270,7 +276,7 @@ body {
   margin-left: 1%;
   margin-right: 1%;
   background-color: #101211;
-  color: #bcdbcc;
+  color: #deaddd;
   cursor: pointer;
   font-size: 20px;
   -webkit-transition-duration: 0.3s;
@@ -288,7 +294,7 @@ body {
   margin-left: 1%;
   margin-right: 1%;
   background-color: #101211;
-  color: #bcdbcc;
+  color: #deaddd;
   cursor: pointer;
   font-size: 20px;
   -webkit-transition-duration: 0.3s;
@@ -400,8 +406,8 @@ body {
 .Footer {
   margin-top: auto;
   background-color: #101211;
-  color: #bcdbcc;
-  font-family: "Handlee", cursive;
+  color: #deaddd;
+  font-family: "Playfair Display", serif;
   font-size: 20px;
   text-align: center;
   padding: 25px 0;

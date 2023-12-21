@@ -8,15 +8,15 @@ const Inputs = ({ toggle }) => {
   return (
     <div className="Pop-Up">
       <div className="inputBox">
-        <button onClick={toggle} className="closeForm">
-          Close
-        </button>
         <form
           action=""
           onSubmit={(e) => {
             formSubmitPC(e);
           }}
         >
+          <button onClick={toggle} className="closeForm">
+            Close
+          </button>
           <input
             type="text"
             placeholder="Name"

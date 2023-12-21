@@ -1,0 +1,206 @@
+// Character Sliders
+.CharContainer {
+  border: 3px solid $accent;
+  margin-left: 50px;
+  margin-bottom: 50px;
+
+  width: 25vw;
+  overflow-y: hidden;
+
+  @media only screen and (max-width: 1200px) {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 150px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 150px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 150px;
+  }
+
+  .item {
+    padding: 25px;
+    border-bottom: 3px solid $accent;
+    color: $light;
+
+    @media only screen and (max-width: 700px) {
+      padding: 15px;
+    }
+  }
+
+  .item:nth-last-child(1) {
+    border-bottom: none;
+  }
+  .item:nth-last-child(even) {
+    background-color: $accent;
+    color: $light;
+  }
+
+  .Delete {
+    width: 99%;
+    padding: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    background-color: $dark;
+    color: $light;
+    cursor: pointer;
+    font-size: 20px;
+
+    transition-duration: 0.3s;
+  }
+  .Delete:hover {
+    background-color: #b00a07;
+
+    text-decoration: underline;
+  }
+
+  .DeleteEdit {
+    width: 48%;
+    padding: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    background-color: $dark;
+    color: $light;
+    cursor: pointer;
+    font-size: 20px;
+
+    transition-duration: 0.3s;
+  }
+  .DeleteEdit:hover {
+    background-color: #b00a07;
+
+    text-decoration: underline;
+  }
+
+  .Edit {
+    width: 48%;
+    padding: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    background-color: $dark;
+    color: $light;
+    cursor: pointer;
+    font-size: 20px;
+
+    transition-duration: 0.3s;
+  }
+
+  .Edit:hover {
+    background-color: $lav;
+    color: $dark;
+
+    text-decoration: underline;
+  }
+
+  .Update {
+    color: $lav;
+    background-color: $dark;
+    border-radius: 4px;
+    margin: auto;
+    width: 70px;
+    padding: 3px 7px;
+    cursor: pointer;
+  }
+
+  .itemLeft {
+    display: inline-block;
+    width: 70%;
+  }
+
+  .itemRight {
+    display: inline-block;
+    width: 30%;
+  }
+}
+
+.HPEditor {
+  text-align: center;
+  .Heal {
+    color: greenyellow;
+    background-color: $dark;
+    border-radius: 4px;
+    margin: auto;
+
+    width: 70px;
+    padding: 3px 7px;
+    cursor: pointer;
+  }
+  .Harm {
+    color: #d90368;
+    background-color: $dark;
+    border-radius: 4px;
+    margin: auto;
+
+    width: 70px;
+    padding: 3px 7px;
+    cursor: pointer;
+  }
+  input {
+    margin: 5px auto;
+    height: 60px;
+    width: 63px;
+    text-align: center;
+    font-size: 25px;
+  }
+}
+
+.empty {
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 450px;
+
+  @media only screen and (max-width: 900px) {
+    width: 80vw;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 25vh;
+  }
+}
+
+// Death Saves
+.DeathSaves {
+  // border: 1px solid red;
+
+  width: 100%;
+  text-align: center;
+  h4 {
+    margin: 0;
+  }
+
+  .Saves {
+  }
+  .Fails {
+    .fails {
+      accent-color: #b00a07;
+      width: 10%;
+    }
+  }
+
+  .LastChance {
+    .Heal {
+      color: greenyellow;
+      background-color: $dark;
+      border-radius: 4px;
+      margin: auto;
+
+      width: 70px;
+      padding: 3px 7px;
+      cursor: pointer;
+    }
+
+    .HPEditBox {
+      width: 40%;
+      text-align: center;
+    }
+  }
+}
