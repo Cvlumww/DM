@@ -11,6 +11,11 @@ $light: #deaddd;
 $accent: #a04daa;
 $lav: #d4c2fc;
 
+// Breakpoints
+$xs: "all and (max-width: 700px)";
+$tablet: "all and (max-width: 900px)";
+$desktop: "all and (min-width: 1200px)";
+
 // Overall
 html {
   overflow-x: hidden !important;

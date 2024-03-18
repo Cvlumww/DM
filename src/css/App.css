@@ -91,6 +91,13 @@ body {
   width: 50%;
 }
 
+@media all and (max-width: 700px) {
+  .buttons button {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .buttons .Clear:hover {
   background-color: #f61517;
   color: #101211;
@@ -201,8 +208,6 @@ body {
 
 .CharContainer {
   border: 3px solid #a04daa;
-  margin-left: 50px;
-  margin-bottom: 50px;
   width: 25vw;
   overflow-y: hidden;
 }
@@ -401,6 +406,52 @@ body {
 .DeathSaves .LastChance .HPEditBox {
   width: 40%;
   text-align: center;
+}
+
+.mainBodyContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 100%;
+  padding: 50px;
+}
+
+.AddRoundContainer {
+  padding: 25px;
+  color: #deaddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media only screen and (max-width: 700px) {
+  .AddRoundContainer {
+    padding: 15px;
+  }
+}
+
+.RoundContainer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 150px;
 }
 
 .Footer {

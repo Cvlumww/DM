@@ -47,6 +47,10 @@
     margin: 25px;
     border-radius: 4px;
     width: 50%;
+
+    @media #{$xs} {
+      flex-wrap: wrap;
+    }
   }
 
   .Clear:hover {

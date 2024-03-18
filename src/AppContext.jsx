@@ -4,13 +4,13 @@ const AppContext = createContext();
 
 export function AppProvider({ children }) {
   const [initiatives, setInitiatives] = useState([
-    // {
-    //   id: Math.floor(Math.random() * 1000000),
-    //   charName: "Xargothrax",
-    //   initiative: 12,
-    //   HP: 0,
-    //   NPC: 1,
-    // },
+    {
+      id: Math.floor(Math.random() * 1000000),
+      charName: "Xargothrax",
+      initiative: 12,
+      HP: 0,
+      NPC: 1,
+    },
     // {
     //   id: Math.floor(Math.random() * 1000000),
     //   charName: "Neph",
@@ -27,23 +27,51 @@ export function AppProvider({ children }) {
     // },
   ]);
 
+  async function sleep(millis) {
+    return new Promise((resolve) => setTimeout(resolve, millis));
+  }
+
+  //async function insertionSort() {
+  // you code logic
+  //await sleep(5000); //delay for 5s
+  //}
+
   // This adds a Non Player Character to the list
   const formSubmitNPC = async (e) => {
     e.preventDefault();
 
-    const x = e.target.multiplier.value;
+    const multiplier = [e.target.multiplier.value];
 
-    const AddCharacterNPC = {
-      id: Math.floor(Math.random() * 1000000),
-      charName: e.target.charName.value,
-      initiative: parseInt(e.target.initiative.value),
-      HP: parseInt(e.target.HP.value),
-      NPC: 1,
-    };
+    if (multiplier === 0 || multiplier === null || multiplier === 1) {
+      const AddCharacterNPC = {
+        id: Math.floor(Math.random() * 1000000),
+        charName: e.target.charName.value,
+        initiative: parseInt(e.target.initiative.value),
+        HP: parseInt(e.target.HP.value),
+        NPC: 1,
+      };
 
-    [...Array(x)].map((_, x) => {
       setInitiatives([...initiatives, AddCharacterNPC]);
-    });
+    } else {
+      for (let i = 0; i < multiplier; i++) {
+        const AddCharacterNPC = {
+          id: Math.floor(Math.random() * 1000000) + i,
+          charName: e.target.charName.value + " " + i,
+          initiative: parseInt(e.target.initiative.value),
+          HP: parseInt(e.target.HP.value),
+          NPC: 1,
+        };
+
+        console.log("Multiplier: ", i);
+
+        const bunch = [];
+        const bunchNew = [...bunch, [i]];
+
+        // setInitiatives([...initiatives, AddCharacterNPC]);
+        // await sleep(500);
+        console.log([bunchNew]);
+      }
+    }
 
     e.target.charName.value = "";
     e.target.initiative.value = null;
@@ -183,6 +211,12 @@ export function AppProvider({ children }) {
     console.log("Counter: ", counter);
   };
 
+  const [roundCounter, SetRoundCounter] = useState(0);
+
+  const updateRoundCounter = () => {
+    SetRoundCounter(roundCounter + 1);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -196,6 +230,8 @@ export function AppProvider({ children }) {
         UpdateInitiative,
         HandleNPCDeath,
         HandleDeathSavingThrows,
+        updateRoundCounter,
+        roundCounter,
       }}
     >
       {children}

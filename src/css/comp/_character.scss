@@ -1,8 +1,8 @@
 // Character Sliders
 .CharContainer {
   border: 3px solid $accent;
-  margin-left: 50px;
-  margin-bottom: 50px;
+  // margin-left: 50px;
+  // margin-bottom: 50px;
 
   width: 25vw;
   overflow-y: hidden;
@@ -203,4 +203,36 @@
       text-align: center;
     }
   }
+}
+
+// Main Body Container
+.mainBodyContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  max-width: 100%;
+  padding: 50px;
+}
+
+// Adding Rounds
+.AddRoundContainer {
+  padding: 25px;
+  color: $light;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 700px) {
+    padding: 15px;
+  }
+}
+
+.RoundContainer {
+  position: sticky;
+  top: 0;
+
+  height: 150px;
 }
