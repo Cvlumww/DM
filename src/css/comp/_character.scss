@@ -4,7 +4,7 @@
   width: 50%;
 
   @media only screen and (max-width: 1200px) {
-    width: 80%;
+    width: 100%;
     margin-bottom: 150px;
   }
 
@@ -13,8 +13,10 @@
     border-bottom: 3px solid $light;
     color: $light;
 
+    display: flex;
+    flex-direction: column;
+
     @media only screen and (max-width: 900px) {
-      padding: 15px;
     }
   }
 
@@ -27,8 +29,7 @@
   }
 
   .Delete {
-    width: 100%;
-    padding: 20px;
+    padding: 10px 20px;
 
     background-color: $dark;
     color: $light;
@@ -38,17 +39,13 @@
     transition-duration: 0.3s;
   }
   .Delete:hover {
-    background-color: #d90368;
-    color: $dark;
-
-    text-decoration: underline;
+    background-color: $dark;
+    color: #f61517;
+    // border: 1px solid #f61517;
   }
 
   .DeleteEdit {
-    width: 48%;
-    padding: 20px;
-    margin-left: 1%;
-    margin-right: 1%;
+    padding: 10px 20px;
 
     background-color: $dark;
     color: $light;
@@ -58,16 +55,12 @@
     transition-duration: 0.3s;
   }
   .DeleteEdit:hover {
-    background-color: #b00a07;
-
-    text-decoration: underline;
+    background-color: $dark;
+    color: #f61517;
   }
 
   .Edit {
-    width: 48%;
-    padding: 20px;
-    margin-left: 1%;
-    margin-right: 1%;
+    padding: 10px 20px;
 
     background-color: $dark;
     color: $light;
@@ -78,7 +71,7 @@
   }
 
   .Edit:hover {
-    background-color: $light;
+    background-color: $accent;
     color: $dark;
 
     text-decoration: underline;
@@ -86,6 +79,7 @@
 
   .Update {
     background-color: $dark;
+    color: $light;
     border-radius: 4px;
     margin: auto;
     width: 70px;
@@ -93,19 +87,35 @@
     cursor: pointer;
   }
 
+  .itemRowOne {
+    display: flex;
+    flex-direction: row;
+  }
   .itemLeft {
-    display: inline-block;
     width: 70%;
+
+    display: flex;
+    flex-direction: column;
   }
 
   .itemRight {
-    display: inline-block;
     width: 30%;
+
+    display: flex;
+    flex-direction: column;
   }
 }
 
+.itemRowTwo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .HPEditor {
-  text-align: center;
+  display: flex;
+
   .Heal {
     color: greenyellow;
     background-color: $dark;
@@ -127,7 +137,7 @@
     cursor: pointer;
   }
   input {
-    margin: 5px auto;
+    margin: 0 auto 5px auto;
     height: 60px;
     width: 63px;
     text-align: center;
@@ -217,17 +227,13 @@
 }
 
 .RoundContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: row;
+  // align-items: center;
+  // justify-content: space-between;
 }
 
 .DisplayRound {
-  position: fixed;
-  top: 40%;
-  right: 10%;
-
   padding: 25px;
   border-radius: 12px;
 

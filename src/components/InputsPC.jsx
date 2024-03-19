@@ -32,6 +32,8 @@ const Inputs = ({ toggle }) => {
             required
           />
 
+          <input type="submit" hidden />
+
           <input type="submit" value="Add Character" />
         </form>
       </div>

@@ -64,10 +64,12 @@
     }
 
     .closeForm:hover {
-      background-color: #f61517;
-      color: $dark;
-      text-decoration: underline;
-      font-size: 30px;
+      background-color: $dark;
+      color: #f61517;
+      border: 1px solid #f61517;
+
+      // text-decoration: underline;
+      font-size: 24px;
       font-weight: 700;
     }
 

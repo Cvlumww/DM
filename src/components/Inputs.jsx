@@ -47,6 +47,8 @@ const Inputs = ({ toggle }) => {
             autoComplete="off"
           />
 
+          <input type="submit" hidden />
+
           <input type="submit" value="Add Character" />
         </form>
       </div>

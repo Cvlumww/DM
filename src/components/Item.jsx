@@ -16,8 +16,8 @@ const Item = ({ initiative }) => {
   });
 
   return (
-    <>
-      <div className="item">
+    <div className="item">
+      <div className="itemRowOne">
         <div className="itemLeft">
           <h3>Name: {initiative.charName}</h3>
 
@@ -28,13 +28,13 @@ const Item = ({ initiative }) => {
             </span>{" "}
           </h3>
 
-          {initiative.NPC === 1 ? <h3>HP: {initiative.HP}</h3> : <p></p>}
+          {initiative.NPC === 1 ? <h3>HP: {initiative.HP}</h3> : <span></span>}
         </div>
 
         <div className="itemRight">
           {/* {(initiative.NPC === 1){
-            return <HP initiative={initiative} />
-          }}   */}
+              return <HP initiative={initiative} />
+            }}   */}
 
           {initiative.NPC === 1 ? (
             <>
@@ -45,7 +45,7 @@ const Item = ({ initiative }) => {
               )}
             </>
           ) : (
-            <p></p>
+            <span></span>
           )}
 
           {showInitiativeEditor === true ? (
@@ -54,40 +54,40 @@ const Item = ({ initiative }) => {
             <p></p>
           )}
         </div>
+      </div>
 
-        {/* Delete or Edit button conditional render */}
-        {initiative.NPC === 1 ? (
+      {/* Delete or Edit button conditional render */}
+      {initiative.NPC === 1 ? (
+        <button
+          className="Delete"
+          onClick={() => {
+            DeleteChar(initiative.id);
+          }}
+        >
+          Delete
+        </button>
+      ) : (
+        <div className="itemRowTwo">
           <button
-            className="Delete"
+            className="DeleteEdit"
             onClick={() => {
               DeleteChar(initiative.id);
             }}
           >
             Delete
           </button>
-        ) : (
-          <div>
-            <button
-              className="DeleteEdit"
-              onClick={() => {
-                DeleteChar(initiative.id);
-              }}
-            >
-              Delete
-            </button>
 
-            <button
-              className="Edit"
-              onClick={() => {
-                setShowInitiativeEditor(!showInitiativeEditor);
-              }}
-            >
-              Edit Initiative
-            </button>
-          </div>
-        )}
-      </div>
-    </>
+          <button
+            className="Edit"
+            onClick={() => {
+              setShowInitiativeEditor(!showInitiativeEditor);
+            }}
+          >
+            Edit Initiative
+          </button>
+        </div>
+      )}
+    </div>
   );
 };
 

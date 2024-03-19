@@ -4,13 +4,13 @@ const AppContext = createContext();
 
 export function AppProvider({ children }) {
   const [initiatives, setInitiatives] = useState([
-    {
-      id: Math.floor(Math.random() * 1000000),
-      charName: "Xargothrax",
-      initiative: 12,
-      HP: 0,
-      NPC: 1,
-    },
+    // {
+    //   id: Math.floor(Math.random() * 1000000),
+    //   charName: "Xargothrax",
+    //   initiative: 12,
+    //   HP: 0,
+    //   NPC: 1,
+    // },
     // {
     //   id: Math.floor(Math.random() * 1000000),
     //   charName: "Neph",
