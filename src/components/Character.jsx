@@ -9,22 +9,28 @@ const Character = () => {
   return (
     <div className="mainBodyContainer">
       {initiatives?.length > 0 ? (
-        <div className="CharContainer">
-          {initiatives.map((initiative) => {
-            return <Item initiative={initiative} key={initiative.id} />;
-          })}
+        <>
+          <div className="CharContainer">
+            {initiatives.map((initiative) => {
+              return <Item initiative={initiative} key={initiative.id} />;
+            })}
+          </div>
 
           <div className="AddRoundContainer">
             <button onClick={updateRoundCounter}>Finish Round</button>
           </div>
-        </div>
+
+          <div className="RoundContainer">
+            <div className="DisplayRound" id="">
+              <h3>Round : {roundCounter}</h3>
+            </div>
+          </div>
+        </>
       ) : (
         <div className="empty">
           <h3>Nothing to show yet, try adding some Characters</h3>
         </div>
       )}
-
-      <div className="RoundContainer">Round : {roundCounter}</div>
     </div>
   );
 };

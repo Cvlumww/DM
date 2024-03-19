@@ -5,6 +5,8 @@
   text-align: center;
   width: 100vw;
 
+  color: $light;
+
   @media only screen and (max-width: 900px) {
     padding: 5vw 0;
   }
@@ -34,6 +36,11 @@
 
   width: 80%;
   margin: auto;
+  flex-wrap: nowrap;
+
+  @media only screen and (max-width: 900px) {
+    flex-wrap: wrap;
+  }
 
   button {
     background-color: $dark;
@@ -48,9 +55,19 @@
     border-radius: 4px;
     width: 50%;
 
-    @media #{$xs} {
-      flex-wrap: wrap;
+    transition-duration: 0.3s;
+
+    @media only screen and (max-width: 900px) {
+      // flex-wrap: wrap;
+
+      margin: 5px;
+      width: 45%;
     }
+  }
+
+  button:hover {
+    background-color: $light;
+    color: $dark;
   }
 
   .Clear:hover {

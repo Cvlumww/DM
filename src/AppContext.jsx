@@ -40,9 +40,9 @@ export function AppProvider({ children }) {
   const formSubmitNPC = async (e) => {
     e.preventDefault();
 
-    const multiplier = [e.target.multiplier.value];
+    const multiplier = e.target.multiplier.value;
 
-    if (multiplier === 0 || multiplier === null || multiplier === 1) {
+    if (multiplier == 0 || multiplier == null || multiplier == 1) {
       const AddCharacterNPC = {
         id: Math.floor(Math.random() * 1000000),
         charName: e.target.charName.value,
@@ -53,23 +53,20 @@ export function AppProvider({ children }) {
 
       setInitiatives([...initiatives, AddCharacterNPC]);
     } else {
+      const bunch = [];
+
       for (let i = 0; i < multiplier; i++) {
         const AddCharacterNPC = {
-          id: Math.floor(Math.random() * 1000000) + i,
-          charName: e.target.charName.value + " " + i,
+          id: Math.floor(Math.random() * 1000000) + (i + 1),
+          charName: e.target.charName.value + " " + (i + 1),
           initiative: parseInt(e.target.initiative.value),
           HP: parseInt(e.target.HP.value),
           NPC: 1,
         };
 
-        console.log("Multiplier: ", i);
+        bunch.push(AddCharacterNPC);
 
-        const bunch = [];
-        const bunchNew = [...bunch, [i]];
-
-        // setInitiatives([...initiatives, AddCharacterNPC]);
-        // await sleep(500);
-        console.log([bunchNew]);
+        setInitiatives([...initiatives, ...bunch]);
       }
     }
 
@@ -89,6 +86,9 @@ export function AppProvider({ children }) {
       initiative: parseInt(e.target.initiative.value),
       NPC: 0,
     };
+
+    console.log("Player Character:");
+    console.log(AddCharacterPC);
 
     setInitiatives([...initiatives, AddCharacterPC]);
 

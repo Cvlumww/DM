@@ -5,6 +5,8 @@
   background-color: $dark;
   color: $light;
 
+  border-top: 3px solid $light;
+
   font-family: $headingFont;
   font-size: 20px;
   text-align: center;
@@ -30,7 +32,7 @@
     font-size: 25px;
     margin: 0;
     a {
-      color: $lav;
+      color: $accent;
       text-decoration: none;
     }
   }

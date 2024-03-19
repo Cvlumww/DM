@@ -1,11 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300&display=swap");
-html {
-  overflow-x: hidden !important;
-}
-
 body {
-  background-color: #101211;
-  color: #deaddd;
+  background-color: #222222;
+  color: #fff6bd;
   padding: 0;
   margin: 0;
   overflow-x: hidden !important;
@@ -35,6 +31,7 @@ body {
   padding: 50px 0;
   text-align: center;
   width: 100vw;
+  color: #fff6bd;
 }
 
 @media only screen and (max-width: 900px) {
@@ -77,30 +74,46 @@ body {
           justify-content: center;
   width: 80%;
   margin: auto;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
-.buttons button {
-  background-color: #101211;
-  color: #deaddd;
-  padding: 15px;
-  font-size: 20px;
-  cursor: pointer;
-  border: 1px solid #deaddd;
-  margin: 25px;
-  border-radius: 4px;
-  width: 50%;
-}
-
-@media all and (max-width: 700px) {
-  .buttons button {
+@media only screen and (max-width: 900px) {
+  .buttons {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 }
 
+.buttons button {
+  background-color: #222222;
+  color: #fff6bd;
+  padding: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 1px solid #fff6bd;
+  margin: 25px;
+  border-radius: 4px;
+  width: 50%;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+@media only screen and (max-width: 900px) {
+  .buttons button {
+    margin: 5px;
+    width: 45%;
+  }
+}
+
+.buttons button:hover {
+  background-color: #fff6bd;
+  color: #222222;
+}
+
 .buttons .Clear:hover {
   background-color: #f61517;
-  color: #101211;
+  color: #222222;
   text-decoration: underline;
   font-size: 26px;
   font-weight: 700;
@@ -130,12 +143,12 @@ body {
 .Pop-Up .inputBox {
   z-index: 50;
   padding: 25px;
-  background-color: #101211;
+  background-color: #222222;
   width: 300px;
   margin: 150px auto;
   border-radius: 10px;
   overflow-x: hidden;
-  border: 1px solid #deaddd;
+  border: 1px solid #fff6bd;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,28 +175,28 @@ body {
   width: 83%;
   font-size: 20px;
   margin: 10px auto 0;
-  background-color: #101211;
-  border: 1px solid #deaddd;
+  background-color: #222222;
+  border: 1px solid #fff6bd;
   padding: 25px;
-  color: #deaddd;
+  color: #fff6bd;
 }
 
 .Pop-Up .inputBox .closeForm {
   width: 100%;
   font-size: 20px;
   border-radius: 4px;
-  background-color: #101211;
-  border: 1px solid #deaddd;
+  background-color: #222222;
+  border: 1px solid #fff6bd;
   padding: 25px;
   cursor: pointer;
-  color: #deaddd;
+  color: #fff6bd;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
 }
 
 .Pop-Up .inputBox .closeForm:hover {
   background-color: #f61517;
-  color: #101211;
+  color: #222222;
   text-decoration: underline;
   font-size: 30px;
   font-weight: 700;
@@ -196,53 +209,35 @@ body {
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
-  color: #deaddd;
+  color: #fff6bd;
 }
 
 .Pop-Up .inputBox input[type="submit"]:hover {
-  background-color: #deaddd;
-  color: #101211;
+  background-color: #fff6bd;
+  color: #222222;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
 }
 
 .CharContainer {
-  border: 3px solid #a04daa;
-  width: 25vw;
-  overflow-y: hidden;
+  border: 3px solid #fff6bd;
+  width: 50%;
 }
 
 @media only screen and (max-width: 1200px) {
   .CharContainer {
-    width: 60%;
-    margin: auto;
-    margin-bottom: 150px;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .CharContainer {
     width: 80%;
-    margin: auto;
-    margin-bottom: 150px;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .CharContainer {
-    width: 80%;
-    margin: auto;
     margin-bottom: 150px;
   }
 }
 
 .CharContainer .item {
   padding: 25px;
-  border-bottom: 3px solid #a04daa;
-  color: #deaddd;
+  border-bottom: 3px solid #fff6bd;
+  color: #fff6bd;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
   .CharContainer .item {
     padding: 15px;
   }
@@ -253,17 +248,15 @@ body {
 }
 
 .CharContainer .item:nth-last-child(even) {
-  background-color: #a04daa;
-  color: #deaddd;
+  background-color: #fff6bd;
+  color: #222222;
 }
 
 .CharContainer .Delete {
-  width: 99%;
+  width: 100%;
   padding: 20px;
-  margin-left: 1%;
-  margin-right: 1%;
-  background-color: #101211;
-  color: #deaddd;
+  background-color: #222222;
+  color: #fff6bd;
   cursor: pointer;
   font-size: 20px;
   -webkit-transition-duration: 0.3s;
@@ -271,7 +264,8 @@ body {
 }
 
 .CharContainer .Delete:hover {
-  background-color: #b00a07;
+  background-color: #d90368;
+  color: #222222;
   text-decoration: underline;
 }
 
@@ -280,8 +274,8 @@ body {
   padding: 20px;
   margin-left: 1%;
   margin-right: 1%;
-  background-color: #101211;
-  color: #deaddd;
+  background-color: #222222;
+  color: #fff6bd;
   cursor: pointer;
   font-size: 20px;
   -webkit-transition-duration: 0.3s;
@@ -298,8 +292,8 @@ body {
   padding: 20px;
   margin-left: 1%;
   margin-right: 1%;
-  background-color: #101211;
-  color: #deaddd;
+  background-color: #222222;
+  color: #fff6bd;
   cursor: pointer;
   font-size: 20px;
   -webkit-transition-duration: 0.3s;
@@ -307,14 +301,13 @@ body {
 }
 
 .CharContainer .Edit:hover {
-  background-color: #d4c2fc;
-  color: #101211;
+  background-color: #fff6bd;
+  color: #222222;
   text-decoration: underline;
 }
 
 .CharContainer .Update {
-  color: #d4c2fc;
-  background-color: #101211;
+  background-color: #222222;
   border-radius: 4px;
   margin: auto;
   width: 70px;
@@ -338,7 +331,7 @@ body {
 
 .HPEditor .Heal {
   color: greenyellow;
-  background-color: #101211;
+  background-color: #222222;
   border-radius: 4px;
   margin: auto;
   width: 70px;
@@ -348,7 +341,7 @@ body {
 
 .HPEditor .Harm {
   color: #d90368;
-  background-color: #101211;
+  background-color: #222222;
   border-radius: 4px;
   margin: auto;
   width: 70px;
@@ -395,7 +388,7 @@ body {
 
 .DeathSaves .LastChance .Heal {
   color: greenyellow;
-  background-color: #101211;
+  background-color: #222222;
   border-radius: 4px;
   margin: auto;
   width: 70px;
@@ -423,9 +416,17 @@ body {
   padding: 50px;
 }
 
+@media only screen and (max-width: 900px) {
+  .mainBodyContainer {
+    padding: 15px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .AddRoundContainer {
   padding: 25px;
-  color: #deaddd;
+  color: #fee650;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -441,23 +442,46 @@ body {
           justify-content: space-between;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
   .AddRoundContainer {
     padding: 15px;
   }
 }
 
 .RoundContainer {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.DisplayRound {
+  position: fixed;
+  top: 40%;
+  right: 10%;
+  padding: 25px;
+  border-radius: 12px;
+  background-color: #fee650;
+}
+
+.DisplayRound h3 {
+  color: #222222;
 }
 
 .Footer {
   margin-top: auto;
-  background-color: #101211;
-  color: #deaddd;
+  background-color: #222222;
+  color: #fff6bd;
+  border-top: 3px solid #fff6bd;
   font-family: "Playfair Display", serif;
   font-size: 20px;
   text-align: center;
@@ -488,7 +512,7 @@ body {
 }
 
 .Footer h4 a {
-  color: #d4c2fc;
+  color: #fee650;
   text-decoration: none;
 }
 /*# sourceMappingURL=App.css.map */

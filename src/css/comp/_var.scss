@@ -5,11 +5,9 @@ $bodyFont: "Poppins", sans-serif;
 $headingFont: "Playfair Display", serif;
 
 // Colours
-$dark: #101211;
-$light: #deaddd;
-
-$accent: #a04daa;
-$lav: #d4c2fc;
+$dark: #222222;
+$accent: #fee650;
+$light: #fff6bd;
 
 // Breakpoints
 $xs: "all and (max-width: 700px)";
@@ -18,7 +16,7 @@ $desktop: "all and (min-width: 1200px)";
 
 // Overall
 html {
-  overflow-x: hidden !important;
+  // overflow-x: hidden !important;
 }
 
 body {
