@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import ReactGA from "react-ga4";
 
 const AppContext = createContext();
 
@@ -27,18 +28,15 @@ export function AppProvider({ children }) {
     // },
   ]);
 
-  async function sleep(millis) {
-    return new Promise((resolve) => setTimeout(resolve, millis));
-  }
-
-  //async function insertionSort() {
-  // you code logic
-  //await sleep(5000); //delay for 5s
-  //}
-
   // This adds a Non Player Character to the list
   const formSubmitNPC = async (e) => {
     e.preventDefault();
+
+    //     ReactGA.event(
+    //   category: 'Button',
+    //   action: 'Click',
+    //   label: 'Contact Us'
+    // });
 
     const multiplier = e.target.multiplier.value;
 
@@ -50,6 +48,12 @@ export function AppProvider({ children }) {
         HP: parseInt(e.target.HP.value),
         NPC: 1,
       };
+
+      ReactGA.event({
+        category: "Button",
+        action: "click",
+        label: "Single NPC Added",
+      });
 
       setInitiatives([...initiatives, AddCharacterNPC]);
     } else {
@@ -63,6 +67,12 @@ export function AppProvider({ children }) {
           HP: parseInt(e.target.HP.value),
           NPC: 1,
         };
+
+        ReactGA.event({
+          category: "Button",
+          action: "click",
+          label: "Multiple NPC's Added",
+        });
 
         bunch.push(AddCharacterNPC);
 
@@ -87,8 +97,11 @@ export function AppProvider({ children }) {
       NPC: 0,
     };
 
-    console.log("Player Character:");
-    console.log(AddCharacterPC);
+    ReactGA.event({
+      category: "Button",
+      action: "click",
+      label: "Player Character Added",
+    });
 
     setInitiatives([...initiatives, AddCharacterPC]);
 
@@ -99,11 +112,23 @@ export function AppProvider({ children }) {
   // Clears the list
   const Clear = () => {
     setInitiatives([]);
+
+    ReactGA.event({
+      category: "Button",
+      action: "click",
+      label: "List Cleared",
+    });
   };
 
   // This deletes and removes a character from the list
   const DeleteChar = (id) => {
     setInitiatives(initiatives.filter((init) => init.id !== id));
+
+    ReactGA.event({
+      category: "Button",
+      action: "click",
+      label: "Character Removed From List",
+    });
   };
 
   // This sorts the list of initiatives
@@ -111,6 +136,12 @@ export function AppProvider({ children }) {
     const initsSorted = [...initiatives];
     initsSorted.sort((a, b) => (a.initiative > b.initiative ? -1 : 1));
     setInitiatives(initsSorted);
+
+    ReactGA.event({
+      category: "Button",
+      action: "click",
+      label: "List of Initiatives Sorted",
+    });
   };
 
   // This updates the initiative for a specific character
@@ -215,6 +246,12 @@ export function AppProvider({ children }) {
 
   const updateRoundCounter = () => {
     SetRoundCounter(roundCounter + 1);
+
+    ReactGA.event({
+      category: "Button",
+      action: "click",
+      label: "Round of Combat Passed",
+    });
   };
 
   return (
