@@ -1,11 +1,11 @@
 // Character Sliders
 .CharContainer {
   border: 3px solid $light;
-  width: 50%;
+  // width: 50%;
 
   @media only screen and (max-width: 1200px) {
-    width: 100%;
-    margin-bottom: 150px;
+    // width: 100%;
+    margin-bottom: 25px;
   }
 
   .item {
@@ -37,6 +37,8 @@
     font-size: 20px;
 
     transition-duration: 0.3s;
+
+    font-family: Arial, Helvetica, sans-serif;
   }
   .Delete:hover {
     background-color: $dark;
@@ -115,6 +117,7 @@
 
 .HPEditor {
   display: flex;
+  flex-direction: column;
 
   .Heal {
     color: greenyellow;
@@ -137,7 +140,7 @@
     cursor: pointer;
   }
   input {
-    margin: 0 auto 5px auto;
+    margin: 5px auto;
     height: 60px;
     width: 63px;
     text-align: center;
@@ -199,7 +202,7 @@
 // Main Body Container
 .mainBodyContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 
   max-width: 100%;
@@ -213,29 +216,35 @@
 
 // Adding Rounds
 .AddRoundContainer {
-  padding: 25px;
+  // padding: 25px;
   color: $accent;
 
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
 
   @media only screen and (max-width: 900px) {
     padding: 15px;
   }
 }
 
-.RoundContainer {
-  // display: flex;
-  // flex-direction: row;
-  // align-items: center;
-  // justify-content: space-between;
+.finishRoundLink {
+  background-color: $light;
+  color: $dark;
+
+  text-decoration: none;
+  text-align: center;
+
+  padding: 25px;
+  margin-top: 25px;
+  font-size: 20px;
+
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .DisplayRound {
-  padding: 25px;
-  border-radius: 12px;
+  margin-top: 25px;
+  padding: 5px;
+  // border-radius: 12px;
 
   background-color: $accent;
   h3 {

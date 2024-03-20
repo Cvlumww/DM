@@ -19,6 +19,9 @@ const Header = () => {
   const { Clear } = useContext(AppContext);
   const { Sort } = useContext(AppContext);
 
+  const { initiatives, roundCounter, updateRoundCounter } =
+    useContext(AppContext);
+
   return (
     <div className="Header">
       <h1>DnD Easier Combat for GM's</h1>
@@ -39,7 +42,15 @@ const Header = () => {
         </button>
       </div>
 
-      <div className="nav2"></div>
+      {initiatives?.length > 0 ? (
+        <div className="RoundContainer">
+          <div className="DisplayRound" id="Round">
+            <h3>Round : {roundCounter}</h3>
+          </div>
+        </div>
+      ) : (
+        <span></span>
+      )}
 
       {npcPopUp && <Inputs toggle={toggleNPCPopUp} />}
       {pcPopUp && <InputsPC toggle={togglePCPopUp} />}

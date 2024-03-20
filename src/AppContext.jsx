@@ -211,7 +211,7 @@ export function AppProvider({ children }) {
     console.log("Counter: ", counter);
   };
 
-  const [roundCounter, SetRoundCounter] = useState(0);
+  const [roundCounter, SetRoundCounter] = useState(1);
 
   const updateRoundCounter = () => {
     SetRoundCounter(roundCounter + 1);

@@ -16,7 +16,16 @@ $desktop: "all and (min-width: 1200px)";
 
 // Overall
 html {
-  // overflow-x: hidden !important;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // font-family: $headingFont;
 }
 
 body {

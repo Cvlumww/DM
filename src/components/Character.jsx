@@ -17,13 +17,13 @@ const Character = () => {
           </div>
 
           <div className="AddRoundContainer">
-            <button onClick={updateRoundCounter}>Finish Round</button>
-          </div>
-
-          <div className="RoundContainer">
-            <div className="DisplayRound" id="">
-              <h3>Round : {roundCounter}</h3>
-            </div>
+            <a
+              onClick={updateRoundCounter}
+              href="#Round"
+              className="finishRoundLink"
+            >
+              Finish Round
+            </a>
           </div>
         </>
       ) : (
