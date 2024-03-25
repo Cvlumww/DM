@@ -135,6 +135,8 @@ export function AppProvider({ children }) {
     });
 
     setInitiatives(updatedInitiativeInitiative);
+
+    HandleAnalyticsEvent("Button", "Player Character Initiative Edited");
   };
 
   // This updates the HP Value for NPC's
@@ -181,6 +183,8 @@ export function AppProvider({ children }) {
         // console.log("internalCounter reached 3", internalCounter);
         DeleteChar(id);
         counter = 0;
+
+        HandleAnalyticsEvent("Form", "NPC's Died");
       }
     }
 
@@ -200,6 +204,8 @@ export function AppProvider({ children }) {
         // console.log("internalCounter reached 3", internalCounter);
         DeleteChar(id);
         counter = 0;
+
+        HandleAnalyticsEvent("Form", "NPC's Died");
       }
     }
 
@@ -219,10 +225,10 @@ export function AppProvider({ children }) {
         // console.log("internalCounter reached 3", internalCounter);
         DeleteChar(id);
         counter = 0;
+
+        HandleAnalyticsEvent("Form", "NPC's Died");
       }
     }
-
-    // console.log("Counter: ", counter);
   };
 
   const [roundCounter, SetRoundCounter] = useState(1);
@@ -230,7 +236,7 @@ export function AppProvider({ children }) {
   const updateRoundCounter = () => {
     SetRoundCounter(roundCounter + 1);
 
-    HandleAnalyticsEvent("Button", "Round of Combat Survived");
+    HandleAnalyticsEvent("Button", "Rounds of Combat Survived");
   };
 
   return (
