@@ -513,14 +513,18 @@ body {
   text-align: center;
   padding: 25px 0;
   overflow-y: hidden !important;
-  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 @media only screen and (max-width: 900px) {
   .Footer {
     padding: 15px;
-    position: fixed;
-    bottom: 0;
   }
 }
 
@@ -532,8 +536,10 @@ body {
 
 @media only screen and (max-width: 900px) {
   .Footer h4 {
-    font-size: 15px;
-    margin-left: -5%;
+    font-size: 18px;
+  }
+  .Footer h4 br {
+    display: none;
   }
 }
 

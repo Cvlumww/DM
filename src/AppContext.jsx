@@ -28,15 +28,17 @@ export function AppProvider({ children }) {
     // },
   ]);
 
+  // GA4 Events Handler
+  const HandleAnalyticsEvent = (category, action) => {
+    ReactGA.event({
+      category: category,
+      action: action,
+    });
+  };
+
   // This adds a Non Player Character to the list
   const formSubmitNPC = async (e) => {
     e.preventDefault();
-
-    //     ReactGA.event(
-    //   category: 'Button',
-    //   action: 'Click',
-    //   label: 'Contact Us'
-    // });
 
     const multiplier = e.target.multiplier.value;
 
@@ -49,13 +51,9 @@ export function AppProvider({ children }) {
         NPC: 1,
       };
 
-      ReactGA.event({
-        category: "Button",
-        action: "click",
-        label: "Single NPC Added",
-      });
-
       setInitiatives([...initiatives, AddCharacterNPC]);
+
+      HandleAnalyticsEvent("Form", "Single Non-Player Character Added");
     } else {
       const bunch = [];
 
@@ -68,15 +66,14 @@ export function AppProvider({ children }) {
           NPC: 1,
         };
 
-        ReactGA.event({
-          category: "Button",
-          action: "click",
-          label: "Multiple NPC's Added",
-        });
-
         bunch.push(AddCharacterNPC);
 
         setInitiatives([...initiatives, ...bunch]);
+
+        HandleAnalyticsEvent(
+          "Form",
+          "Multiples of Non-Player Characters Added"
+        );
       }
     }
 
@@ -97,38 +94,26 @@ export function AppProvider({ children }) {
       NPC: 0,
     };
 
-    ReactGA.event({
-      category: "Button",
-      action: "click",
-      label: "Player Character Added",
-    });
-
     setInitiatives([...initiatives, AddCharacterPC]);
 
     e.target.charName.value = "";
     e.target.initiative.value = null;
+
+    HandleAnalyticsEvent("Form", "Player Character Added");
   };
 
   // Clears the list
   const Clear = () => {
     setInitiatives([]);
 
-    ReactGA.event({
-      category: "Button",
-      action: "click",
-      label: "List Cleared",
-    });
+    HandleAnalyticsEvent("Button", "Form Cleared");
   };
 
   // This deletes and removes a character from the list
   const DeleteChar = (id) => {
     setInitiatives(initiatives.filter((init) => init.id !== id));
 
-    ReactGA.event({
-      category: "Button",
-      action: "click",
-      label: "Character Removed From List",
-    });
+    HandleAnalyticsEvent("Button", "Character Deleted");
   };
 
   // This sorts the list of initiatives
@@ -137,11 +122,7 @@ export function AppProvider({ children }) {
     initsSorted.sort((a, b) => (a.initiative > b.initiative ? -1 : 1));
     setInitiatives(initsSorted);
 
-    ReactGA.event({
-      category: "Button",
-      action: "click",
-      label: "List of Initiatives Sorted",
-    });
+    HandleAnalyticsEvent("Button", "Initiative Sorted / Combat Started");
   };
 
   // This updates the initiative for a specific character
@@ -166,6 +147,8 @@ export function AppProvider({ children }) {
     });
 
     setInitiatives(updatedInitiativeHP);
+
+    HandleAnalyticsEvent("Button", "Character's HP Edited");
   };
 
   // This finds if an NPC is at 0 HP
@@ -186,16 +169,16 @@ export function AppProvider({ children }) {
       if (no1 <= 0) {
         internalCounter++;
         no1++;
-        console.log("Number of Times Fail-1 has been pressed: ", no1);
+        // console.log("Number of Times Fail-1 has been pressed: ", no1);
       }
 
       if (isChecked === true) {
         counter++;
-        console.log("Fail-1 - Counter: ", counter);
+        // console.log("Fail-1 - Counter: ", counter);
       }
 
       if (internalCounter >= 3) {
-        console.log("internalCounter reached 3", internalCounter);
+        // console.log("internalCounter reached 3", internalCounter);
         DeleteChar(id);
         counter = 0;
       }
@@ -205,16 +188,16 @@ export function AppProvider({ children }) {
       if (no2 <= 0) {
         internalCounter++;
         no2++;
-        console.log("Number of Times Fail-2 has been pressed: ", no2);
+        // console.log("Number of Times Fail-2 has been pressed: ", no2);
       }
 
       if (isChecked === true) {
         counter++;
-        console.log("Fail-2 - Counter: ", counter);
+        // console.log("Fail-2 - Counter: ", counter);
       }
 
       if (internalCounter >= 3) {
-        console.log("internalCounter reached 3", internalCounter);
+        // console.log("internalCounter reached 3", internalCounter);
         DeleteChar(id);
         counter = 0;
       }
@@ -224,22 +207,22 @@ export function AppProvider({ children }) {
       if (no3 <= 0) {
         internalCounter++;
         no3++;
-        console.log("Number of Times Fail-3 has been pressed: ", no3);
+        // console.log("Number of Times Fail-3 has been pressed: ", no3);
       }
 
       if (isChecked === true) {
         counter++;
-        console.log("Fail-3 - Counter: ", counter);
+        // console.log("Fail-3 - Counter: ", counter);
       }
 
       if (internalCounter >= 3) {
-        console.log("internalCounter reached 3", internalCounter);
+        // console.log("internalCounter reached 3", internalCounter);
         DeleteChar(id);
         counter = 0;
       }
     }
 
-    console.log("Counter: ", counter);
+    // console.log("Counter: ", counter);
   };
 
   const [roundCounter, SetRoundCounter] = useState(1);
@@ -247,11 +230,7 @@ export function AppProvider({ children }) {
   const updateRoundCounter = () => {
     SetRoundCounter(roundCounter + 1);
 
-    ReactGA.event({
-      category: "Button",
-      action: "click",
-      label: "Round of Combat Passed",
-    });
+    HandleAnalyticsEvent("Button", "Round of Combat Survived");
   };
 
   return (
